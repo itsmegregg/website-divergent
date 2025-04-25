@@ -28,7 +28,7 @@ const demoData = {
           title: "Hardware",
           description: "POS Hardware You Can Trust.",
           icon: <Tablet className="size-5 shrink-0" />,
-          url: "/company",
+          url: "/hardware",
         },
         {
           title: "Report Management System",
