@@ -5,7 +5,7 @@ import { Navbar1 } from "@/components/blocks/shadcnblocks-com-navbar1";
 const demoData = {
   logo: {
     url: "/",
-    src: './divergentLogo-white.png',
+    src: '/divergentLogo-white.png',
     alt: "Divergent Philippines",
     title: "",
   },  
@@ -28,7 +28,7 @@ const demoData = {
           title: "Hardware",
           description: "POS Hardware You Can Trust.",
           icon: <Tablet className="size-5 shrink-0" />,
-          url: "/hardware",
+          url: "/services/hardware",
         },
         {
           title: "Report Management System",

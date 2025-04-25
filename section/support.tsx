@@ -131,7 +131,7 @@ export default function Support() {
                                     variants={cardHover}
                                     whileHover="hover"
                                 >
-                                    <div className="mb-5 p-3 bg-blue-50 text-blue-600 rounded-xl inline-block">
+                                    <div className="mb-5 p-3 bg-primary text-white rounded-xl inline-block">
                                         {feature.icon}
                                     </div>
                                     <h3 className="text-xl font-semibold text-neutral-800 mb-2">
@@ -167,7 +167,7 @@ export default function Support() {
                         <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-50 rounded-full opacity-50" />
                         <div className="relative z-10">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="p-3 bg-blue-50 text-blue-600 rounded-xl">
+                            <div className="p-3 bg-primary text-white rounded-xl">
                                 <Clock className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-semibold text-neutral-800">
@@ -179,7 +179,7 @@ export default function Support() {
                             {schedule.map((item, index) => (
                                 <m.div 
                                     key={index} 
-                                    className="flex items-center gap-3 p-4 rounded-xl bg-blue-50/30 hover:bg-blue-50/50 transition-colors duration-200"
+                                    className="flex items-center gap-3 p-4 rounded-xl bg-primary/30 hover:bg-primary/50 transition-colors duration-200"
                                     whileHover={{ x: 5 }}
                                 >
                                     <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />

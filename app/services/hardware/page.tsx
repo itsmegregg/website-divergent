@@ -24,6 +24,11 @@ const images  = [
     src: "/hardware/hp-engageone-145.png",
     alt: "HP EngageOne 145",
     title: "HP EngageOne 145"
+  },
+  {
+    src:"/hardware/landi2.png",
+    alt: "Landi",
+    title: "Landi c20"
   }
 
 ]
@@ -54,6 +59,11 @@ const accessories = [
     src: "/hardware/kds.png",
     alt: "Kitchen Display System"
   },
+  {
+    title: "Thermal Printer",
+    src: "/hardware/thermal-epson.png",
+    alt: "Thermal Printer"
+  }
 
 ]
 
@@ -90,7 +100,7 @@ export default function Hardware() {
       </motion.p>
 
      <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 p-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
