@@ -23,19 +23,19 @@ function Hero() {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full bg-gradient-to-r from-fuchsia-700 to-indigo-600">
+    <div className="w-full bg-gradient-to-r from-slate-600 to-indigo-600 pl-5 pr-5">
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
       
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl md:text-5xl max-w-3xl tracking-tighter text-center font-regular">
               <span className="text-spektr-cyan-50 text-white">Divergent Technologoies Phils Inc. is </span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+              <span className="relative flex w-full justify-center overflow-hidden text-center pb-2 md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-semibold p-2 bg-blue-500 rounded-lg text-white"
+                    className="absolute font-semibold p-1 bg-blue-500 rounded-lg text-white mb-2"
                     initial={{ opacity: 0, y: 0 }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
@@ -61,10 +61,10 @@ function Hero() {
             </p>
           </div>
           <div className="flex flex-row gap-3">
-            <Button size="lg" className="gap-4" variant="outline">
+            <Button  className="gap-4" variant="outline">
               Book A Demo <PhoneCall className="w-4 h-4" />
             </Button>
-            <Button size="lg" className="gap-4">
+            <Button  className="gap-4">
               Our products <MoveRight className="w-4 h-4" />
             </Button>
           </div>
