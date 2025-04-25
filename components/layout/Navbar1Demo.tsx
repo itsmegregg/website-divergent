@@ -41,7 +41,7 @@ const demoData = {
           description:
             "Sell Smarter. Grow Faster.",
           icon: <Zap className="size-5 shrink-0" />,
-          url: "/services/e-commerce",
+          url: "/services/ecommerce",
         },
       ],
     },
