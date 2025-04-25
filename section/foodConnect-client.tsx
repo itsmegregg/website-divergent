@@ -44,11 +44,11 @@ export default function FoodConnectClient() {
             <TooltipProvider key={index}>
             <Tooltip>
                 <TooltipTrigger asChild>
-                <div className="flex w-36 h-48 bg-gray-300 items-center justify-center rounded-md">
+                <div className="flex w-48  h-48 bg-gray-300 items-center justify-center rounded-md">
                     <img 
                     src={client.image_link}
                     alt={client.title}
-                    className="w-28 h-28 rounded-md object-contain"
+                    className="w-32 h-32 rounded-md object-contain"
                     />
                 </div>
                 </TooltipTrigger>

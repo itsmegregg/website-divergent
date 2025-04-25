@@ -265,6 +265,7 @@ export default function WhoAreWe() {
           We are committed to delivering innovative, reliable, and user-friendly solutions that help businesses thrive in today&apos;s competitive landscape.
         </p>
       </div>
+      <br/> 
     </motion.div>
   );
 }

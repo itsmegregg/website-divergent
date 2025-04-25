@@ -91,7 +91,7 @@ const CompatibilityItems = [
       >
         {CompatibilityItems.map((compItem, index) => (
           <motion.div 
-            className="card  w-full p-6 border-l-4 border-primary hover:shadow-lg transition-shadow duration-300"
+            className="card  w-full p-6 border rounded-lg border-2 hover:shadow-lg transition-shadow duration-300"
             key={index}
             variants={itemVariants}
             whileHover={hoverEffect}

@@ -60,7 +60,7 @@ export default function Contact() {
           setIsSubmitted(false);
           form.reset();
         }, 3000);
-      }, 1500);
+      }, 1500); 
     });
   
 
