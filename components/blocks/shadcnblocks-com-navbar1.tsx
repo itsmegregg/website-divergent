@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import dynamic from "next/dynamic";
 
 const AlignRight = dynamic(() => import("lucide-react").then(mod => mod.AlignRight), { ssr: false });
@@ -35,7 +36,7 @@ interface MenuItem {
   title: string;
   url: string;
   description?: string;
-  icon?: JSX.Element;
+  icon?: React.ReactNode;
   items?: MenuItem[];
 }
 
@@ -131,12 +132,6 @@ const Navbar1 = ({
       title: "Frequently Asked Questions",
       url: "/faq",
     },
-  ],
-  mobileExtraLinks = [
-    { name: "Press", url: "#" },
-    { name: "Contact", url: "#" },
-    { name: "Imprint", url: "#" },
-    { name: "Sitemap", url: "#" },
   ],
 }: Navbar1Props) => {
   return (

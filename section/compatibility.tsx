@@ -15,7 +15,7 @@ export default function Compatibility (){
 
 
     
-const item = {
+const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
@@ -66,21 +66,21 @@ const CompatibilityItems = [
             >
         <motion.h1 
             className='text-2xl md:text-3xl font-regular tracking-tighter'
-            variants={item}
+            variants={itemVariants}
         >
             Compatibility
         </motion.h1>
       
       <motion.h2 
         className='text-base font-semibold text-gray-600 mb-1'
-        variants={item}
+        variants={itemVariants}
       >
         Compatible with Windows 10 and 11 desktops and tablets.
       </motion.h2>
       
       <motion.p 
         className='text-red-500 text-xs mb-6'
-        variants={item}
+        variants={itemVariants}
       >
         *Recommended to client to use Windows 11. Windows 10 will end support in Oct 2025.
       </motion.p>
@@ -89,11 +89,11 @@ const CompatibilityItems = [
         className='grid grid-cols-1 md:grid-cols-3 gap-6'
         variants={container}
       >
-        {CompatibilityItems.map((item, index) => (
+        {CompatibilityItems.map((compItem, index) => (
           <motion.div 
             className="card  w-full p-6 border-l-4 border-primary hover:shadow-lg transition-shadow duration-300"
             key={index}
-            variants={item}
+            variants={itemVariants}
             whileHover={hoverEffect}
             whileTap={{ scale: 0.98 }}
           >
@@ -101,7 +101,7 @@ const CompatibilityItems = [
               className='text-xl font-semibold mb-3 pb-2 border-b-2 border-primary w-fit'
               whileHover={{ x: 5 }}
             >
-              {item.title}
+              {compItem.title}
             </motion.h1>
             <div className='flex items-start'>
               <motion.span 
@@ -113,9 +113,9 @@ const CompatibilityItems = [
                   repeatType: "reverse"
                 }}
               >
-                {item.icon}
+                {compItem.icon}
               </motion.span>
-              <p className='text-sm'>{item.description}</p>
+              <p className='text-sm'>{compItem.description}</p>
             </div>
           </motion.div>
         ))}

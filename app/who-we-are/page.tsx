@@ -106,7 +106,7 @@ export default function WhoAreWe() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl md:text-3xl lg:text-3xl leading-relaxed tracking-tight text-muted-foreground">Why partner with Divergent Technologies?</h1>
         <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground">
-          We are committed to delivering innovative, reliable, and user-friendly solutions that help businesses thrive in today's competitive landscape.
+          We are committed to delivering innovative, reliable, and user-friendly solutions that help businesses thrive in today&apos;s competitive landscape.
         </p>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4 mb-4"
@@ -262,7 +262,7 @@ export default function WhoAreWe() {
       <div className="max-w-4xl mx-auto mt-12">
         <h1 className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground">Our Commitment</h1>
         <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground">
-          We are committed to delivering innovative, reliable, and user-friendly solutions that help businesses thrive in today's competitive landscape.
+          We are committed to delivering innovative, reliable, and user-friendly solutions that help businesses thrive in today&apos;s competitive landscape.
         </p>
       </div>
     </motion.div>

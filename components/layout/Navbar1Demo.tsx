@@ -1,8 +1,6 @@
 "use client ";
-import { Book, Computer, DollarSign, File, Sunset, Tablet, Trees, Zap } from "lucide-react";
+import { Computer, DollarSign, Tablet, Zap } from "lucide-react";
 import { Navbar1 } from "@/components/blocks/shadcnblocks-com-navbar1";
-import NavbarLogo from './divergentLogo-white.png'
-import { title } from "process";
 
 const demoData = {
   logo: {

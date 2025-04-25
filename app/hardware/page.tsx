@@ -5,7 +5,7 @@ export default function Hardware() {
       Hardware
     </h2>
     <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground text-center">
-    We offer POS hardware for businesses of all sizes and types. Whether you're a small shop or a large restaurant, we have the hardware you need to streamline your operations and improve your customer experience
+    We offer POS hardware for businesses of all sizes and types. Whether you&apos;re a small shop or a large restaurant, we have the hardware you need to streamline your operations and improve your customer experience
     </p>
     </div>
   );

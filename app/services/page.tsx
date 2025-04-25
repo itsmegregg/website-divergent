@@ -15,7 +15,7 @@ const servicesItems = [
         slug: "/fast-pos",
         image: "https://images.pexels.com/photos/12935074/pexels-photo-12935074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         icon:[
-            <Computer/>, <Tablet />
+            <Computer key="fast-pos-computer"/>, <Tablet key="fast-pos-tablet"/>
         ],
         clients:["https://upload.wikimedia.org/wikipedia/en/5/56/Potato_Corner_Logo_2023.png", 
             "https://contents.smsupermalls.com/data/uploads/2020/07/KOMORO_JAPANESE_DINING.jpg",
@@ -33,7 +33,7 @@ const servicesItems = [
         slug: "/food-connect",
         image: "https://images.pexels.com/photos/12935048/pexels-photo-12935048.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         icon:[
-            <Computer/>, <Tablet />
+            <Computer key="food-connect-computer"/>, <Tablet key="food-connect-tablet"/>
         ],
         clients: [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9mY6jCQs5ceFZTyea9gVMFJUdVUjXrp04KQ&s",
@@ -49,7 +49,7 @@ const servicesItems = [
         slug: "/retail-assist",
         image: "https://images.pexels.com/photos/8476590/pexels-photo-8476590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         icon:[
-            <Computer/>, <Tablet />
+            <Computer key="retail-assist-computer"/>, <Tablet key="retail-assist-tablet"/>
         ],
         clients:[
             "https://upload.wikimedia.org/wikipedia/commons/b/b9/Kipling_wordmark.svg",
@@ -70,7 +70,7 @@ const servicesItems = [
         slug: "/e-commerce",
         image: "https://images.pexels.com/photos/5865610/pexels-photo-5865610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         icon:[
-            <Computer/>, <Tablet />
+            <Computer key="e-commerce-computer"/>, <Tablet key="e-commerce-tablet"/>
         ]
     }
 ];
@@ -94,6 +94,18 @@ const hoverEffect = {
     transition: {
         duration: 0.3,
         ease: "easeInOut"
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        transition: { 
+            duration: 0.6,
+            ease: "easeOut"
+        } 
     }
 };
 
@@ -151,12 +163,14 @@ export default function Services() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    {servicesItems.map((item, index) => (
-                           <Link href={`/services/${item.slug}`} key={index}>
-                        <motion.div 
+                    {servicesItems.map((item) => (
+                           <Link 
+                            href={`/services/${item.slug}`} 
+                            key={item.slug}
                             className="flex flex-row card  w-full p-6 border-l-4 border-primary hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-                            
-                            variants={item}
+                           >
+                        <motion.div 
+                            variants={cardVariants}
                             whileHover={hoverEffect} 
                         >
                             
@@ -178,8 +192,8 @@ export default function Services() {
                                      <div>
                                         <h1 className="text-base font-semibold">Notable Clients</h1>
                                      <div className='flex flex-row gap-4'>
-                                       {item.clients && item.clients.map((client, index) => (
-                                            <Image  className="w-16 object-contain " src={client} alt={item.title} width={200} height={200} key={index}/>
+                                       {item.clients && item.clients.map((client, clientIdx) => (
+                                            <Image  className="w-16 object-contain " src={client} alt={item.title} width={200} height={200} key={client + '-' + clientIdx}/>
                                         ))}
                                        </div>
 

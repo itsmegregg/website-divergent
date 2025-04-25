@@ -1,15 +1,13 @@
 "use client";
 
 import { Boxes, ScanBarcode, Gift, BarChart, Store, Users, CreditCard, Printer } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
 import Compatibility from "@/section/compatibility";
 import ContactUs from "@/section/contact-us";
 import RMS from "@/section/rms";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
-import FastPOSClient from "@/section/fastpos-client";
-import FoodConnectClient from "@/section/foodConnect.-client";
 import RetailAssistClient from "@/section/retailAssist-client";
 
 export default function RetailAssist() {

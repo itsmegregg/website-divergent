@@ -1,7 +1,7 @@
 "use client";
 
-import { ShoppingCart, Users, BarChart, Lock, CreditCard, Package, FileText, Tag, Monitor, Database } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { ShoppingCart, Lock, Package, FileText, Tag, Monitor, Database } from "lucide-react";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
 import Compatibility from "@/section/compatibility";
