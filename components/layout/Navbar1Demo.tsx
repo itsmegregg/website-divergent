@@ -41,7 +41,7 @@ const demoData = {
           description:
             "Sell Smarter. Grow Faster.",
           icon: <Zap className="size-5 shrink-0" />,
-          url: "/services/ecommerce",
+          url: "/services/e-commerce",
         },
       ],
     },
@@ -74,6 +74,7 @@ const demoData = {
 function Header() {
   return (
     <div className="w-full bg-primary sticky top-0 z-100">
+    
       <Navbar1 {...demoData} />
     </div>
   );
