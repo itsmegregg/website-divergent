@@ -2,6 +2,7 @@
 
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import Compatibility from "@/section/compatibility";
+import ContactNew from "@/section/contact-new";
 import ContactUs from "@/section/contact-us";
 
 // Removed unused icon and motion imports
@@ -38,7 +39,7 @@ export default function FoodConnect() {
 
       <Compatibility/>
       {/* FoodConnectClient section removed */}
-      <ContactUs/>
+      <ContactNew/>
     </div>
   );
 }

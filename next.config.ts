@@ -29,7 +29,9 @@ const nextConfig: NextConfig = {
 
 'scontent.fmnl3-1.fna.fbcdn.net',
 'cdn.shopify.com',
-'dogsandthecityph.com'],
+'dogsandthecityph.com',
+'images.unsplash.com'
+],
 
   },
 };
