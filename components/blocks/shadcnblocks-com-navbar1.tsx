@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const AlignRight = dynamic(() => import("lucide-react").then(mod => mod.AlignRight), { ssr: false });
@@ -140,7 +141,7 @@ const Navbar1 = ({
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-48" alt={logo.alt} />
+              <Image src={logo.src} width={192} height={192} className="w-48" alt={logo.alt} />
               <span className="text-lg font-semibold">{logo.title}</span>
             </a>
             <div className="flex items-center">
@@ -160,7 +161,7 @@ const Navbar1 = ({
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-36" alt={logo.alt} />
+              <Image src={logo.src} width={144} height={144} className="w-36" alt={logo.alt} />
               <span className="text-lg font-semibold">{logo.title}</span>
             </a>
             <Sheet>
@@ -173,7 +174,7 @@ const Navbar1 = ({
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      <img src={logo.src} className="w-36" alt={logo.alt} />
+                      <Image src={logo.src} width={144} height={144} className="w-36" alt={logo.alt} />
                       <span className="text-lg font-semibold">
                         {logo.title}
                       </span>

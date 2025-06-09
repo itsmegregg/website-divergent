@@ -9,6 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import Image from "next/image";
 import { Send, CheckCircle, Phone, Mail, MapPin } from "lucide-react";
 
 // Motion components
@@ -103,10 +104,12 @@ export default function ContactUs() {
           {/* Left column - Hero section */}
           <m.div className="space-y-8" variants={itemVariants}>
             <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-lg">
-              <img
+              <Image
                 src="https://images.pexels.com/photos/851584/pexels-photo-851584.jpeg"
                 alt="Contact us"
                 className="object-cover w-full h-full"
+                width={700}
+                height={400}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/40 to-purple-600/40"></div>
             </div>

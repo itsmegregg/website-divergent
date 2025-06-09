@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function RetailAssistClients() {
@@ -45,10 +46,12 @@ export default function RetailAssistClients() {
             <Tooltip>
                 <TooltipTrigger asChild>
                 <div className="flex w-48 h-48 bg-gray-300 items-center justify-center rounded-md">
-                    <img 
+                    <Image 
                     src={client.image_link}
                     alt={client.title}
                     className="w-32 h-32 rounded-md object-contain"
+                    width={128}
+                    height={128}
                     />
                 </div>
                 </TooltipTrigger>
