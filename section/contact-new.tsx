@@ -78,9 +78,8 @@ export default function ContactNew() {
                 <div className="flex flex-col items-start gap-4">
                   <p className="text-sm text-muted-foreground">Visit us</p>
                   <div className="flex flex-row gap-2">
-                  <Map />                 
-                    <p>Unit 3B Cafel Bldg., 7505 Santillan St. Brgy. Pio Del Pilar 1230 Makati, Philippines</p>
-                  </div>
+                    <MapPin/>
+                    <p>Unit 3B Cafel Bldg., 7505 Santillan St. Brgy. Pio Del Pilar 1230 Makati City</p></div>
                 </div>   
             </div>
 
@@ -112,7 +111,7 @@ export default function ContactNew() {
             </motion.div>
           </motion.div>
 
-          <motion.div
+          <motion.div 
             variants={containerVariants}
             initial="hidden"
             animate="visible"

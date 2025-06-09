@@ -3,7 +3,7 @@ export default function Footer() {
         <footer className="w-full bg-primary">
             <div className="container mx-auto">
                 <div className="flex flex-col items-center justify-center py-8">
-                    <p className="text-white">&copy; {new Date().getFullYear()} Divergent Technologoies Phils Inc. All rights reserved.</p>
+                    <p className="text-white">&copy; {new Date().getFullYear()} Divergent Technologies Phils Inc. All rights reserved.</p>
                 </div>
             </div>
         </footer>

@@ -3,6 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import router from "next/router";
+import Link from "next/link";
 
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -29,7 +31,7 @@ function Hero() {
       
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl md:text-5xl max-w-3xl tracking-tighter text-center font-regular">
-              <span className="text-spektr-cyan-50 text-white">Divergent Technologoies Phils Inc. is </span>
+              <span className="text-spektr-cyan-50 text-white">Divergent Technologies Phils Inc. is </span>
               <span className="relative flex w-full justify-center overflow-hidden text-center pb-2 md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
@@ -64,9 +66,11 @@ function Hero() {
             <Button  className="gap-4" variant="outline">
               Book A Demo <PhoneCall className="w-4 h-4" />
             </Button>
-            <Button  className="gap-4">
-              Our products <MoveRight className="w-4 h-4" />
+          <Link href="/services">
+          <Button  className="gap-4" variant="outline">
+              Our services <MoveRight className="w-4 h-4" />
             </Button>
+          </Link>
           </div>
         </div>
       </div>
