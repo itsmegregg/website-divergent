@@ -33,7 +33,7 @@ export default function FastPOS() {
       </div>
       <Compatibility/>
       <FastPOSClient/>
-    <ContactNew/>
+  <ContactNew/>
     </div>
   );
 }

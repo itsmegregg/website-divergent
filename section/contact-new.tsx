@@ -39,7 +39,7 @@ export default function ContactNew() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className=""
+            className="p-3"
           >
             <motion.h2
               variants={itemVariants}
@@ -59,31 +59,30 @@ export default function ContactNew() {
               className="space-y-6 mb-8"
             >
             <div className="space-y-4">
-                <div className="flex items-center">
-                  <Phone className="w-5 h-5 text-primary mr-3" />
-                  <div>
-                    <p className="text-sm text-gray-500">Call us at</p>
-                    <p className="font-medium">09178324735 / 09988462397 / 8812-2656 / 8812-2148</p>
+                <div className="flex flex-col items-start gap-4">
+                  <p className="text-sm text-muted-foreground">Contact us</p>
+                  <div className="flex flex-row gap-2">
+                  <Phone />                 
+                    <p>09178324735 / 09988462397 / 8812-2656 / 8812-2148</p>
                   </div>
-                </div>
+                </div>    
 
-                <div className="flex items-center">
-                  <Mail className="w-5 h-5 text-primary mr-3" />
-                  <div>
-                    <p className="text-sm text-gray-500">Email us at</p>
-                    <p className="font-medium">sales@divergentechphil.com</p>
-                    <p className="font-medium">dtpisales2014@gmail.com</p>
+                <div className="flex flex-col items-start gap-4">
+                  <p className="text-sm text-muted-foreground">Email us</p>
+                  <div className="flex flex-row gap-2">
+                  <Mail />                 
+                    <p>sales@divergentechphil.com / dtpisales2014@gmail.com</p>
                   </div>
-                </div>
+                </div>   
 
-                <div className="flex items-center">
-                  <MapPin className="w-5 h-5 text-primary mr-3" />
-                  <div>
-                    <p className="text-sm text-gray-500">Visit us at</p>
-                    <p className="font-medium">Unit 3B Cafel Bldg., 7505 Santillan St. Brgy. Pio Del Pilar 1230 Makati, Philippines</p>
+                <div className="flex flex-col items-start gap-4">
+                  <p className="text-sm text-muted-foreground">Visit us</p>
+                  <div className="flex flex-row gap-2">
+                  <Map />                 
+                    <p>Unit 3B Cafel Bldg., 7505 Santillan St. Brgy. Pio Del Pilar 1230 Makati, Philippines</p>
                   </div>
-                </div>
-              </div>
+                </div>   
+            </div>
 
             
             </motion.div>
