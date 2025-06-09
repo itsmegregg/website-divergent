@@ -3,7 +3,6 @@
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import Compatibility from "@/section/compatibility";
 import ContactNew from "@/section/contact-new";
-import ContactUs from "@/section/contact-us";
 import RetailAssistClient from "@/section/retailAssist-client";
 
 export default function RetailAssist() {

@@ -5,54 +5,28 @@ import Image from "next/image";
 import { 
   Card, 
   CardContent, 
-  CardDescription, 
-  CardFooter, 
+
   CardHeader, 
   CardTitle 
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Tabs, 
-  TabsContent, 
-  TabsList, 
-  TabsTrigger 
-} from "@/components/ui/tabs";
-import { 
-  HoverCard, 
-  HoverCardContent, 
-  HoverCardTrigger 
-} from "@/components/ui/hover-card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { 
-  CheckCircle, 
-  Briefcase, 
-  Lightbulb, 
-  Users, 
-  Building, 
+
+import {
+  Briefcase,
+  Lightbulb,
+  Users,
+  Building,
   ShieldCheck,
   BarChart3,
   Settings,
   Headset,
   GitCompareArrows,
-  Target,
-  Pin,
-  Map,
-  Mail,
-  Phone,
-  Linkedin,
-  Facebook,
-  Instagram
+  Target
 } from "lucide-react";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+
 import ContactNew from "@/section/contact-new";
 
 // Animation variants with smoother easing
@@ -133,47 +107,7 @@ const partnerBenefits = [
   },
 ];
 
-const businessSolutionsTabs = [
-  {
-    value: "pos-systems",
-    label: "POS Systems",
-    icon: Settings,
-    content: [
-      "BIR-Accredited POS Software & Hardware",
-      "Touchscreen & Mobile POS Solutions",
-      "Integrated Payment Processing",
-      "Barcode Scanners & Receipt Printers",
-    ],
-    image: "https://images.pexels.com/photos/12935094/pexels-photo-12935094.jpeg",
-    alt: "Modern POS System in a retail store"
-  },
-  {
-    value: "management-tools",
-    label: "Management Tools",
-    icon: GitCompareArrows,
-    content: [
-      "Advanced Inventory Management",
-      "Supply Chain Optimization",
-      "Sales Analytics & Reporting",
-      "Customer Relationship Management (CRM) Lite",
-    ],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Team collaborating on business management tools"
-  },
-  {
-    value: "support-services",
-    label: "Support & Services",
-    icon: Headset,
-    content: [
-      "Secure Cloud Integration & Backups",
-      "Nationwide Technical Support",
-      "On-site Installation & Training",
-      "Preventive Maintenance & System Upgrades",
-    ],
-    image: "https://images.unsplash.com/photo-1602665742701-389671bc40c0?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Technical support agent assisting a client"
-  }
-];
+
 
 const expertiseAdvantages = [
   { 

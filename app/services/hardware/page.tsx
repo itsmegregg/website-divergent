@@ -1,6 +1,5 @@
 "use client";
 
-import ContactUs from "@/section/contact-us";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ContactNew from "@/section/contact-new";

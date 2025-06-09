@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 
 import Clients from "@/section/clients";
-import ContactUsSection from "@/section/contact-us";
 import Services from "@/section/services";
 import Support from "@/section/support";
 import ContactNew from "@/section/contact-new";

@@ -4,7 +4,7 @@
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import FastPOSClient from "@/section/fastpos-client";
 import Compatibility from "@/section/compatibility";
-import ContactUs from "@/section/contact-us";
+
 import ContactNew from "@/section/contact-new";
 
 export default function FastPOS() {
