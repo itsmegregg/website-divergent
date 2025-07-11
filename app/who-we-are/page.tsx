@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 
 import ContactNew from "@/section/contact-new";
+import { useRouter } from "next/navigation"; // Correct import for App Router
 
 // Animation variants with smoother easing
 const containerVariants = {
@@ -133,56 +134,59 @@ const expertiseAdvantages = [
 ];
 
 const trustedMalls = [
-  { name: "SM Supermalls", logo: "/logos/sm-logo.png" }, // Replace with actual logo paths
-  { name: "Ayala Malls", logo: "/logos/ayala-logo.png" },
-  { name: "Robinsons Malls", logo: "/logos/robinsons-logo.png" },
-  { name: "Rockwell", logo: "/logos/rockwell-logo.png" },
-  { name: "Megaworld Lifestyle Malls", logo: "/logos/megaworld-logo.png" },
-  { name: "Festival Mall", logo: "/logos/festival-logo.png" },
-  { name: "Shangri-La Plaza", logo: "/logos/shangrila-logo.png" },
-  { name: "Ortigas Malls", logo: "/logos/ortigas-logo.png" },
+  { name: "SM Supermalls", logo: "https://upload.wikimedia.org/wikipedia/commons/7/76/SM_Supermalls_Logo.png" }, // Replace with actual logo paths
+  { name: "Ayala Malls", logo: "https://upload.wikimedia.org/wikipedia/commons/8/83/Ayala_Malls_Logo.png" },
+  { name: "Robinsons Malls", logo: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/da66fe9e-4151-4f87-ab28-81fbd89faf3d/dgiye1v-b8b5639e-e94d-4eb9-9af4-3a4f8f43aa79.png/v1/fill/w_1280,h_342/robinsons_malls_logo_2022_by_theofficiallsc_dgiye1v-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzQyIiwicGF0aCI6IlwvZlwvZGE2NmZlOWUtNDE1MS00Zjg3LWFiMjgtODFmYmQ4OWZhZjNkXC9kZ2l5ZTF2LWI4YjU2MzllLWU5NGQtNGViOS05YWY0LTNhNGY4ZjQzYWE3OS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.DP2qj2IhIJZryd4hQJ7h4_Q3ZX2T3i0RphIfHHlHPnw" },
+  { name: "Rockwell", logo: "https://e-rockwell.com/wp-content/uploads/2024/10/Rockwell-Logo.svg" },
+  { name: "Megaworld Lifestyle Malls", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d8/MLM_Logo_New_Gradient_MCD_FINAL.png" },
+  { name: "Festival Mall", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Festival_Mall_Alabang_logo.svg/2560px-Festival_Mall_Alabang_logo.svg.png" },
+  { name: "Shangri-La Plaza", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHMzaZ166DqmA5LheIuYA2lpzmfWjxDPQwM5M2C1-tWizhGsan2qPG3gIBmxo4_djDMUQ&usqp=CAU" },
+  { name: "Ortigas Malls", logo: "https://ortigasmalls.sgp1.digitaloceanspaces.com/cms_images/hnI4BbHjC7xCKhXXxpGUygg30ilWl1OdMfHNTDtJ.webp" },
 ];
 
 const forData = [
     { name: "Retail Stores", icon: Building },
     { name: "Restaurants & Cafes", icon: Briefcase }, // Example, use appropriate icons
     { name: "Supermarkets", icon: Users },
-    { name: "Services (Salons, Spas)", icon: Settings },
+    { name: "Salons & Spas", icon: Settings },
     { name: "And Many More!", icon: Lightbulb },
 ];
 
 export default function WhoAreWe() {
+  const router = useRouter(); // Initialize useRouter hook
+
   return (
     <div className="w-full flex flex-col">
-      <div className="h-[750px] w-full mx-auto p-20 flex bg-stone-50">
-        <div className="flex-1">
+      <div className="min-h-[500px] md:h-[750px] w-full mx-auto p-4 md:p-20 flex flex-col md:flex-row bg-stone-50">
+        <div className="w-full md:flex-1 order-2 md:order-1">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="m-10 h-full flex flex-col justify-center items-start"
+            className="p-4 md:m-10 h-full flex flex-col justify-center items-start"
           >
-            <Badge className="bg-blue-500 text-sm">
+            <Badge className="bg-blue-500">
               Divergent Technologies Phils., INC.
             </Badge>
             <motion.h1
               variants={itemVariants}
-              className="text-7xl font-bold"
+              className="text-5xl md:text-7xl lg:text-7xl font-bold"
             >
-              Who We 
-              <span className="bg-orange-500 rounded-lg px-3 text-gray-50 ml-3">
+              Who 
+              We 
+              <span className="bg-orange-500 rounded-lg px-2 text-gray-50 ml-2">
                 Are?
               </span>
             </motion.h1>
             <motion.h2
               variants={itemVariants}
-              className="text-2xl font-semibold text-neutral-600 pt-3"
+              className="text-xl md:text-2xl lg:text-2xl font-semibold text-neutral-600 pt-3"
             >
               Pioneering Business Solutions in the Philippines for over 27 years.
             </motion.h2>
           </motion.div>
         </div>
-        <div className="flex-1 bg-neutral-50">
+        <div className="w-full md:flex-1 bg-neutral-50 order-1 md:order-2">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -197,7 +201,7 @@ export default function WhoAreWe() {
           </motion.div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto pt-5">
+      <div className="max-w-7xl mx-auto pt-5 px-4 md:px-6">
         <motion.h2
           variants={itemVariants}
           className="text-xl font-semibold text-neutral-700"
@@ -206,7 +210,7 @@ export default function WhoAreWe() {
         </motion.h2>
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 w-full max-w-7xl mx-auto py-6"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 w-full max-w-7xl mx-auto py-6"
         >
           {forData.map((data, index) => (
             <motion.div
@@ -215,10 +219,35 @@ export default function WhoAreWe() {
               className="h-full"
             >
               <div className="border-2 rounded">
-                <div className="flex flex-col items-center justify-center p-6 text-center space-y-3">
-                  <data.icon className="w-10 h-10 text-primary mb-2" />
-                  <span className="text-slate-700 text-lg font-semibold">{data.name}</span>
-                </div>
+              <motion.div
+        className="flex flex-col items-center justify-center p-6 text-center space-y-3"
+       
+        whileHover="hovered" 
+        initial="rest"      
+      >
+        {/* The icon */}
+        <motion.div
+          className="w-10 h-10 text-primary mb-2"
+          variants={{
+            rest: { rotate: 0 }, // No rotation in the rest state
+            hovered: {
+              rotate: [0, -10, 10, -10, 10, 0], // Shake animation: rotate back and forth
+              transition: {
+                duration: 0.5,
+                ease: "easeInOut",
+                repeat: 0 // Only shake once on hover
+              }
+            }
+          }}
+        >
+          <data.icon className="w-full h-full" /> {/* Make sure icon takes full space */}
+        </motion.div>
+
+    
+        <span className="text-slate-700 text-lg font-semibold">
+          {data.name}
+        </span>
+      </motion.div>
               </div>
             </motion.div>
           ))}
@@ -228,15 +257,15 @@ export default function WhoAreWe() {
         variants={itemVariants}
         initial="hidden"
         animate="visible"
-        className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-md m-10 overflow-hidden"
+        className="rounded-xl bg-amber-50 mx-4 md:m-10 overflow-hidden"
       >
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/6 p-6 flex justify-center">
-            <div className="bg-blue-500 p-4 rounded-full">
-              <Lightbulb className="w-8 h-8 text-white" />
+        <div className="flex flex-col md:flex-row items-center p-2 md:p-0">
+          <div className="w-full md:w-1/6 p-3 md:p-6 flex justify-center">
+            <div className="bg-amber-500 p-4 rounded-full">
+              <Lightbulb className="w-8 h-8 text-white" />  
             </div>
           </div>
-          <div className="md:w-5/6 p-6">
+          <div className="w-full md:w-5/6 p-3 md:p-6">
             <h2 className="text-xl md:text-2xl font-semibold text-slate-800 leading-relaxed">
               We empower businesses with cost-effective, fully integrated POS systems—combining cutting-edge hardware, intelligent software, and reliable support to drive efficiency, compliance, and growth.
             </h2>
@@ -246,16 +275,16 @@ export default function WhoAreWe() {
 
       </div>
 
-      <div className="max-w-7xl mx-auto flex   w-full">
-          <div className="flex-1 flex flex-col  justify-center items-center">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row w-full px-4 md:px-6 py-8">
+          <div className="w-full md:flex-1 flex flex-col justify-center items-center mb-8 md:mb-0">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-800 ">
             Why Partner with  
           </h2>
           <h1 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-blue-600 ">Divergent Technologies?</h1>
           </div>
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="w-full md:flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
               {partnerBenefits.map((data,index)=>(
-                <div className="border rounded-lg p-4 mb-3 w-full max-w-md  flex items-center space-x-3" key={index}>
+                <div className="border rounded-lg p-3 md:p-4 mb-3 w-full max-w-md flex items-center space-x-2 md:space-x-3" key={index}>
               
                  <span className="">
                  {React.createElement(data.icon)}
@@ -275,18 +304,13 @@ export default function WhoAreWe() {
         animate="visible"
         className="max-w-7xl mx-auto px-8 py-24 mb-24 relative"
       >
-        {/* Premium background with layered design */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-slate-50 rounded-3xl shadow-lg overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl max-h-5xl bg-white/5 rounded-full blur-3xl"></div>
-          <div className="absolute inset-0 border border-blue-100/50 rounded-3xl"></div>
-        </div>
+
+
         
         <motion.div variants={itemVariants} className="relative z-10 flex flex-col items-center mb-16">
           <div className="flex items-center justify-center mb-4">
             <div className="h-[1px] w-12 bg-blue-300 mr-4"></div>
-            <Badge className="bg-blue-100/80 text-blue-700 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
+            <Badge className="bg-blue-500 rounded px-1 text-gray-50">
               Industry Leaders
             </Badge>
             <div className="h-[1px] w-12 bg-blue-300 ml-4"></div>
@@ -305,7 +329,7 @@ export default function WhoAreWe() {
           {/* Left side - Image with overlay content */}
           <motion.div 
             variants={itemVariants} 
-            className="lg:col-span-5 rounded-2xl overflow-hidden shadow-xl"
+            className="lg:col-span-5 rounded-2xl overflow-hidden "
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden group">
               <Image 
@@ -343,6 +367,7 @@ export default function WhoAreWe() {
                     <p className="text-blue-100 text-sm">Clients Served</p>
                   </div>
                 </div>
+                
               </div>
             </div>
           </motion.div>
@@ -361,11 +386,11 @@ export default function WhoAreWe() {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="h-full"
                 >
-                  <Card className="h-full shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 overflow-hidden bg-white/90 backdrop-blur-sm group">
+                  <Card className="h-full border overflow-hidden bg-white/90 group">
                     <CardHeader className="pb-2 relative">
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></div>
+                      <div className="absolute top-0 left-0 w-full h-1  transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></div>
                       <CardTitle className="text-xl flex items-center text-slate-800 font-bold">
-                        <div className="bg-blue-50 p-3 rounded-xl mr-4 group-hover:bg-blue-100 transition-colors duration-300">
+                        <div className="bg-slate-50 p-3 rounded-xl mr-4 group-hover:bg-blue-100 transition-colors duration-300">
                           {React.createElement(item.icon, { className: "w-6 h-6 text-blue-600 flex-shrink-0" })}
                         </div>
                         {item.title}
@@ -383,23 +408,22 @@ export default function WhoAreWe() {
               variants={itemVariants}
               className="pt-2"
             >
-              <Card className="border-0 bg-gradient-to-r from-blue-600 to-blue-700 text-white overflow-hidden">
+              <Card className="border-0  overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row items-center justify-between">
                     <div className="mb-4 md:mb-0">
                       <h3 className="text-xl font-bold mb-2">Ready to transform your business?</h3>
-                      <p className="text-blue-100">Schedule a consultation with our experts today.</p>
+                      <p className="text-gray-600">Schedule a consultation with our experts today.</p>
                     </div>
-                    <Button className="bg-white text-blue-700 hover:bg-blue-50 font-medium px-6 py-6">
+                    <Button className=""
+                      onClick={() => router.push('/contact')}
+                    >
                       Get Started
                       <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                     </Button>
                   </div>
                 </CardContent>
                 
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/30 rounded-full blur-2xl"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/30 rounded-full blur-2xl"></div>
               </Card>
             </motion.div>
           </motion.div>
@@ -421,7 +445,7 @@ export default function WhoAreWe() {
             variants={itemVariants} 
             className="text-center mb-16"
           >
-            <Badge className="bg-green-100 text-green-700 px-4 py-1.5 text-sm font-medium mb-4">
+            <Badge className=" bg-green-600 text-white">
               Trusted Nationwide
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
@@ -443,14 +467,14 @@ export default function WhoAreWe() {
                 whileHover={{ y: -8, scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Card className="h-full shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200 group">
+                <Card className="h-full transition-all overflow-hidden border border-slate-200 group">
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></div>
                   <CardContent className="p-6 flex flex-col items-center justify-center h-full">
                     {mall.logo ? (
                       <div className="relative w-full h-16 mb-4">
                         <Image 
                           src={mall.logo} 
-                          alt={mall.name} 
+                          alt={mall.name}	 
                           fill
                           className="object-contain"
                           sizes="(max-width: 768px) 40vw, 20vw"
@@ -463,7 +487,7 @@ export default function WhoAreWe() {
                     )}
                     <h3 className="text-lg font-semibold text-slate-800 text-center">{mall.name}</h3>
                     <div className="mt-2 flex items-center">
-                      <Badge variant="outline" className="text-xs bg-slate-50">
+                      <Badge>
                         Certified Partner
                       </Badge>
                     </div>
@@ -473,15 +497,7 @@ export default function WhoAreWe() {
             ))}
           </motion.div>
           
-          <motion.div 
-            variants={itemVariants}
-            className="mt-16 text-center"
-          >
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all">
-              View All Partners
-              <span className="ml-2">→</span>
-            </Button>
-          </motion.div>
+
         </div>
       </motion.section>
 

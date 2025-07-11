@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="w-full bg-primary">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4" >
                 <div className="flex flex-col items-center justify-center py-8">
                     <p className="text-white">&copy; {new Date().getFullYear()} Divergent Technologies Phils Inc. All rights reserved.</p>
                 </div>
