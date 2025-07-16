@@ -176,13 +176,13 @@ export default function ContactNew() {
                   </motion.div>
                   <motion.div className="">
                     <label
-                      htmlFor="email"
+                      htmlFor="text"
                       className="block text-gray-700 mb-2"
                     >
                       Contact Number
                     </label>
                     <input
-                      type="email"
+                      type="text"
                       name="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
                       placeholder="09111111111"
@@ -196,7 +196,7 @@ export default function ContactNew() {
                       Email Address
                     </label>
                         <input 
-                      type="text"
+                      type="email"
                       name="email"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
                         placeholder="johndoe@mail.com"
