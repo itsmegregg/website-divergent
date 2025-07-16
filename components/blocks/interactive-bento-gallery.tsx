@@ -39,8 +39,9 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
         }
 
         return () => {
-            if (videoRef.current) {
-                observer.unobserve(videoRef.current); // Clean up observer when component unmounts
+            const currentVideoRef = videoRef.current;
+            if (currentVideoRef) {
+                observer.unobserve(currentVideoRef); // Clean up observer when component unmounts
             }
         };
     }, []);
@@ -80,10 +81,11 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
 
         return () => {
             mounted = false;
-            if (videoRef.current) {
-                videoRef.current.pause();
-                videoRef.current.removeAttribute('src');
-                videoRef.current.load();
+            const currentVideoRef = videoRef.current;
+            if (currentVideoRef) {
+                currentVideoRef.pause();
+                currentVideoRef.removeAttribute('src');
+                currentVideoRef.load();
             }
         };
     }, [isInView]);

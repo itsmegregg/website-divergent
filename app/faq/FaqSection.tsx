@@ -35,7 +35,7 @@ const faqData = [
   },
   {
     question: "Is BIR registration FREE of charge?",
-    answer: "We do the registration for POS Permit to Use Sales Machines. We assist in providing the necessary documents for the approval of the permit.",
+    answer: "Yes, we do the registration for POS Permit to Use Sales Machines. We assist in providing the necessary documents for the approval of the permit.",
   },
   {
     question: "Does your POS have a feature on Employee Attendance?",

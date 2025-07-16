@@ -1,4 +1,5 @@
-"use client";
+
+"use client";
 import { Computer, DollarSign, Tablet, Zap } from "lucide-react";
 import { Navbar1 } from "@/components/blocks/shadcnblocks-com-navbar1";
 

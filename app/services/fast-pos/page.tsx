@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import Compatibility from "@/section/compatibility";
 import ContactNew from "@/section/contact-new";
-import FastPOSClient from "@/section/fastpos-client";
+
+import Image from "next/image";
+import { BarChart2Icon, Printer } from "lucide-react";
 
 interface GalleryImage {
   image_link: string;
@@ -41,12 +43,12 @@ export default function FastPOS() {
       {/* Hero Section with Animation */}
       
       <motion.div
-        className="relative bg-gradient-to-r from-orange-800 via-orange-600 to-orange-800 py-16 md:py-24 overflow-hidden"
+        className="relative bg-gradient-to-r from-rose-800 via-rose-600 to-rose-800 py-16 md:py-24 overflow-hidden"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -60,13 +62,13 @@ export default function FastPOS() {
                 POINT OF SALE SOLUTION
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-                Fast<span className="bg-white text-orange-600 rounded-lg px-2 text-orange-600 ml-2">POS</span>
+                Fast<span className="bg-white text-rose-600 rounded-lg px-2 text-rose-600 ml-2">POS</span>
               </h1>
-              <p className="text-xl md:text-2xl text-orange-50 font-light mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-rose-50 font-light mb-8 leading-relaxed">
                 Elevate your quick-service operations with our cutting-edge point-of-sale system designed for speed and efficiency
               </p>
               <div className="flex flex-wrap gap-4">
-                <button onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="bg-white text-orange-600 hover:bg-orange-50 px-6 py-3 rounded-lg font-medium transition-all flex items-center">
+                <button onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="bg-white text-rose-600 hover:bg-rose-50 px-6 py-3 rounded-lg font-medium transition-all flex items-center">
                   Explore Features
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -85,10 +87,12 @@ export default function FastPOS() {
             >
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
 
-              <img 
+              <Image 
                 src="/fast-pos/fast-pos.jpeg"
                 alt="FastPOS Interface Preview"
-                className="w-[600px] h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
+                width={600}
+                height={400}
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               </div>
             </motion.div>
@@ -128,7 +132,7 @@ export default function FastPOS() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <div className="bg-orange-100 text-orange-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+            <div className="bg-rose-100 text-rose-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M7 7h.01" /><path d="M17 7h.01" /><path d="M7 17h.01" /><path d="M17 17h.01" /></svg>
             </div>
             <h4 className="font-semibold text-xl mb-2">Touch Optimized</h4>
@@ -142,7 +146,7 @@ export default function FastPOS() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="bg-orange-100 text-orange-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+            <div className="bg-rose-100 text-rose-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2H2v10h10V2Z" /><path d="M12 12H2v10h10V12Z" /><path d="M22 2h-10v20h10V2Z" /></svg>
             </div>
             <h4 className="font-semibold text-xl mb-2">Inventory Management</h4>
@@ -156,11 +160,11 @@ export default function FastPOS() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <div className="bg-orange-100 text-orange-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
+            <div className="bg-rose-100 text-rose-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+              <BarChart2Icon />
             </div>
-            <h4 className="font-semibold text-xl mb-2">Analytics Dashboard</h4>
-            <p className="text-gray-600">Access real-time insights into sales performance, discounts, payment types, and business peak hours.</p>
+            <h4 className="font-semibold text-xl mb-2">Comprehensive Reporting</h4>
+            <p className="text-gray-600">Gain insights into sales, inventory, and staff performance with detailed, customizable reports.</p>
           </motion.div>
           
           <motion.div 
@@ -170,11 +174,11 @@ export default function FastPOS() {
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="bg-orange-100 text-orange-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.5 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6.5" /><path d="M16 21a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" /><path d="m21 21-1.5-1.5" /></svg>
+            <div className="bg-rose-100 text-rose-600 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                <Printer/>
             </div>
-            <h4 className="font-semibold text-xl mb-2">Cloud-Based Reporting</h4>
-            <p className="text-gray-600">Access reports from anywhere at any time with secure, cloud-based report storage and management.</p>
+            <h4 className="font-semibold text-xl mb-2">Smart Kitchen Printing</h4>
+            <p className="text-gray-600">Automate order routing to specific kitchen stations, ensuring efficient food preparation and reduced wait times.</p>
           </motion.div>
         </div>
       </motion.div>
@@ -201,13 +205,20 @@ export default function FastPOS() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
+              onClick={() => handleImageClick(image)}
             >
-              <div className="aspect-w-16 aspect-h-9 bg-gray-100 overflow-hidden">
-                <img
+              <div className="aspect-w-16 aspect-h-9 bg-gray-100 overflow-hidden"
+              
+              
+              
+              >
+                <Image
                   src={image.image_link}
                   alt={image.alt}
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                  onClick={() => handleImageClick(image)}
+                 
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
@@ -215,7 +226,7 @@ export default function FastPOS() {
                   <p className="font-medium text-sm">{image.alt}</p>
                   <div className="mt-2">
                     <button 
-                      onClick={() => handleImageClick(image)} 
+                      onClick={() => handleImageClick(image)  } 
                       className="text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm px-3 py-1 rounded-full transition-all duration-300"
                     >
                       View Larger
@@ -226,8 +237,8 @@ export default function FastPOS() {
             </motion.div>
           ))}
         </div>
-        <div className="mt-12 bg-orange-50 border border-orange-100 rounded-xl p-6 md:p-8">
-          <h3 className="text-lg md:text-xl font-medium text-orange-900 mb-4 text-center">
+        <div className="mt-12 bg-rose-50 border border-rose-100 rounded-xl p-6 md:p-8">
+          <h3 className="text-lg md:text-xl font-medium text-rose-900 mb-4 text-center">
             Beyond Fast Transactions
           </h3>
           <p className="text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
@@ -278,13 +289,13 @@ export default function FastPOS() {
 
       {/* Call to Action Section */}
       <motion.div
-        className="bg-gradient-to-r from-orange-800 via-orange-600 to-orange-800 py-16 md:py-20 relative overflow-hidden my-16"
+        className="bg-gradient-to-r from-rose-800 via-rose-600 to-rose-800 py-16 md:py-20 relative overflow-hidden my-16"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -296,7 +307,7 @@ export default function FastPOS() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Streamline Your Operations?</h2>
-              <p className="text-xl text-orange-50 font-light mb-8 leading-relaxed">
+              <p className="text-xl text-rose-50 font-light mb-8 leading-relaxed">
                 Get FastPOS for your quick-service business and experience the difference in speed and efficiency.
               </p>
             </motion.div>
@@ -310,7 +321,7 @@ export default function FastPOS() {
               <a href="#contact" onClick={(e) => { 
                 e.preventDefault();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }} className="bg-white text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-lg font-medium transition-all flex items-center text-lg shadow-lg hover:shadow-xl">
+              }} className="bg-white text-rose-600 hover:bg-rose-50 px-8 py-4 rounded-lg font-medium transition-all flex items-center text-lg shadow-lg hover:shadow-xl">
                 Request a Demo
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -328,20 +339,13 @@ export default function FastPOS() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true, margin: "-100px" }}
       >
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Compatibility/>
+        </div>
       </motion.div>
       
-      {/* Clients Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        <FastPOSClient/>
-      </motion.div>
-      
-      {/* Contact Section */}
+        {/* Contact Section */}
       <div id="contact">
         <motion.div
           initial={{ opacity: 0 }}
@@ -355,13 +359,15 @@ export default function FastPOS() {
 
       {/* Image Preview Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-4xl">
+      <DialogContent className="lg:max-w-[90vh] md:max-w-[80vh] sm:max-w-[60vh]"> 
           <DialogTitle className="text-xl font-semibold mb-4">{selectedImage?.alt}</DialogTitle>
           <div className="relative">
             {selectedImage && (
-              <img 
+              <Image 
                 src={selectedImage.image_link} 
                 alt={selectedImage.alt} 
+                width={600}
+                height={400}
                 className="w-full h-auto rounded-md"
               />
             )}

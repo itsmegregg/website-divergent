@@ -60,7 +60,7 @@ export default function Clients() {
         },
         {
             id: 10,
-            name: "Lingname",
+            name: "Lingnam",
             logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDpaF-8ih3sTQTioFSTTZbifU_H6QECT_9vA&s",
         },
         {
@@ -83,6 +83,54 @@ export default function Clients() {
             name: "Fruitas",
           
             logo: "https://fruitasholdings.com/wp/wp-content/uploads/2024/08/Fruitas-1-300x200.png",
+        },
+        {
+            id: 15,
+            name: "BURNT BEAN",
+          
+            logo: "https://www.burntbean.ph/cdn/shop/files/bb_logo4.png?v=1715851231&width=600",
+        },
+        {
+            id: 16,
+            name: "Mazza",
+          
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeyFvzRDD7ZxVToFO2iwCB1CRGw0Kw6b_tjQ&s"
+        },
+        {
+            id: 17,
+            name: "CHEF JESSIE",
+          
+            logo: "https://cdn.viiworksdemo.com/logo/molh-cj-restaurants-logo.jpg"
+        },
+        {
+            id: 18,
+            name: "7 Luxe",
+          
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvgeIdLpZjyr4D3EIQB8wBrwGcjdea4NbwaA&s"
+        },
+        {
+            id: 19,
+            name: "Terry's",
+          
+            logo: "https://thepodium.com.ph/wp-content/uploads/2019/07/Untitled-design-6-768x480.jpg.webp"
+        },
+        {
+            id: 20,
+            name: "L`Entrecote",
+          
+            logo: "https://lentrecotemanila.com/wp-content/uploads/2018/05/lentrecote-black-on-red-2018.jpg"
+        },
+        {
+            id: 21,
+            name: "Kawa Ramen",
+          
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfNq21bGBvkZMaE9gLwQzt84E3F8wWziMNBA&s"
+        },
+        {
+            id:22,
+            name: "Balai Pandesal",
+          
+            logo: "https://www.balainifruitas.com/wp/wp-content/uploads/2021/11/logo-balai-pandesal.png"
         }
     ];
 

@@ -1,9 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, LinkedinIcon, Mail, Map, MapPin, Phone, Send } from "lucide-react";
+import { Facebook, Instagram, LinkedinIcon, Mail, Map, MapPin, Phone, Send, Check } from "lucide-react";
 
 // Animation variants with smoother easing
 const containerVariants = {
@@ -31,6 +32,23 @@ const itemVariants = {
 };
 
 export default function ContactNew() {
+  // Simple state to track if the form was just submitted via local testing
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // This will only work for local testing, not in the deployed static site
+  useEffect(() => {
+    // Check if there's a 'submitted' parameter in the URL
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.get('submitted') === 'true') {
+      setIsSubmitted(true);
+      
+      // Clear the URL parameter after a short delay
+      setTimeout(() => {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }, 5000);
+    }
+  }, []);
+
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -63,7 +81,7 @@ export default function ContactNew() {
                   <p className="text-sm text-muted-foreground">Contact us</p>
                   <div className="flex flex-row gap-2">
                   <Phone />                 
-                    <p>09178324735 / 09988462397 / 8812-2656 / 8812-2148</p>
+                    <p>09178324735 / 09988462397 / 8812-2656 / 8812-2148 / 8362-8794 / 7117-9925</p>
                   </div>
                 </div>    
 
@@ -91,19 +109,19 @@ export default function ContactNew() {
               className="flex space-x-4"
             >
               <a
-                href="#"
+                href="https://www.linkedin.com/in/divergent-phil-3a72a7200"
                 className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"
               >
                 <LinkedinIcon />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/DivergentPOS"
                 className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"
               >
                 <Facebook />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/divergentechphils"
                 className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"
               >
                 <Instagram />
@@ -127,7 +145,16 @@ export default function ContactNew() {
               <motion.form
                 variants={containerVariants}
                 className=""
+                action="https://formsubmit.co/sales@divergentechphil.com"
+                method="POST"
               >
+                {/* FormSubmit configuration fields */}
+                <input type="hidden" name="_subject" value="New Contact Form Submission" />
+                <input type="hidden" name="_captcha" value="true" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="https://divergentechphil.com/thank-you" />
+                {/* If you don't have a thank-you page, use your domain homepage */}
+                <input type="hidden" name="_honeypot" value="" />
                 <motion.div
                   variants={itemVariants}
                   className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
@@ -141,9 +168,10 @@ export default function ContactNew() {
                     </label>
                     <input
                       type="text"
-                      id="name"
+                      name="name"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
                       placeholder="John Doe"
+                      required
                     />
                   </motion.div>
                   <motion.div className="">
@@ -155,9 +183,10 @@ export default function ContactNew() {
                     </label>
                     <input
                       type="email"
-                      id="email"
+                      name="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
                       placeholder="john@example.com"
+                      required
                     />
                   </motion.div>
                 </motion.div>
@@ -174,9 +203,10 @@ export default function ContactNew() {
                   </label>
                   <input
                     type="text"
-                    id="subject"
+                    name="subject"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
                     placeholder="How can we help you?"
+                    required
                   />
                 </motion.div>
 
@@ -191,20 +221,31 @@ export default function ContactNew() {
                     Message
                   </label>
                   <textarea
-                    id="message"
+                    name="message"
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
                     placeholder="Your message here..."
+                    required
                   ></textarea>
                 </motion.div>
 
                 <motion.div
                   variants={itemVariants}
-                  className="flex"
+                  className="flex flex-col gap-3"
                 >
-                  <Button className="text-white py-3 !rounded-button whitespace-nowrap cursor-pointer">
-                    <Send className="size-5 mr-2" /> Send Message
-                  </Button>
+                  {isSubmitted ? (
+                    <div className="flex items-center gap-2 text-green-600">
+                      <Check className="size-5" />
+                      <span>Message sent successfully! We'll be in touch soon.</span>
+                    </div>
+                  ) : (
+                    <Button 
+                      type="submit"
+                      className="text-white py-3 !rounded-button whitespace-nowrap cursor-pointer"
+                    >
+                      <Send className="size-5 mr-2" /> Send Message
+                    </Button>
+                  )}
                 </motion.div>
               </motion.form>
             </Card>

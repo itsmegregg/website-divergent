@@ -142,6 +142,9 @@ const trustedMalls = [
   { name: "Festival Mall", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Festival_Mall_Alabang_logo.svg/2560px-Festival_Mall_Alabang_logo.svg.png" },
   { name: "Shangri-La Plaza", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHMzaZ166DqmA5LheIuYA2lpzmfWjxDPQwM5M2C1-tWizhGsan2qPG3gIBmxo4_djDMUQ&usqp=CAU" },
   { name: "Ortigas Malls", logo: "https://ortigasmalls.sgp1.digitaloceanspaces.com/cms_images/hnI4BbHjC7xCKhXXxpGUygg30ilWl1OdMfHNTDtJ.webp" },
+  { name: "Eton Centris", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVCMlZg39K3xne3bRFwu52sCldVxI1Do-dzQ&s" },
+  { name: "GreenField District", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGoLrlV6a7ngq_t5V8-VVVBeSsRskTRwBYig&s" },
+  { name: "Other Malls & Retailers, both Local & Overseas", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrjlBkx9I0IP_ZQP3htZXCSlZ_qwCPQijZUX7Fz5gt89sVrLowkbsLKweBJie-_JA9JNQ&usqp=CAU" },
 ];
 
 const forData = [
@@ -449,7 +452,7 @@ export default function WhoAreWe() {
               Trusted Nationwide
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
-              Powering the <span className="text-green-600">Philippines&apos;</span> Top Malls & Retailers
+              Empowering the <span className="text-green-600">Philippines&apos;</span> Top Malls & Retailers
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
               We are proudly accredited and operational in major commercial hubs nationwide, serving the country&apos;s most prestigious retail establishments.

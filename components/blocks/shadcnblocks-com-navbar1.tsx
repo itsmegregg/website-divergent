@@ -141,7 +141,7 @@ const Navbar1 = ({
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <a href={logo.url} className="flex items-center gap-2">
-              <Image src={logo.src} width={192} height={192} className="w-48" alt={logo.alt} />
+              <Image src={logo.src} width={192} height={40} alt={logo.alt} className="object-contain" />
               <span className="text-lg font-semibold">{logo.title}</span>
             </a>
             <div className="flex items-center">
@@ -154,14 +154,14 @@ const Navbar1 = ({
           </div>
           <div className="flex gap-2">
             <Button asChild  className="text-gray-50 bg-rose-500 hover:bg-rose-600">
-              <a href="/contact-us"><Phone className="size-5 mr-2" /> Book A Demo</a>
+              <a href="/contact"><Phone className="size-5 mr-2" /> Book A Demo</a>
             </Button>
           </div>
         </nav>
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a href={logo.url} className="flex items-center gap-2">
-              <Image src={logo.src} width={144} height={144} className="w-36" alt={logo.alt} />
+              <Image src={logo.src} width={144} height={30} alt={logo.alt} className="object-contain" />
               <span className="text-lg font-semibold">{logo.title}</span>
             </a>
             <Sheet>
@@ -174,7 +174,7 @@ const Navbar1 = ({
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      <Image src={logo.src} width={144} height={144} className="w-36" alt={logo.alt} />
+                      <Image src={logo.src} width={144} height={30} alt={logo.alt} className="object-contain" />
                       <span className="text-lg font-semibold">
                         {logo.title}
                       </span>
@@ -193,7 +193,7 @@ const Navbar1 = ({
                   </NavigationMenu>
                   <div className="flex flex-col gap-3">
                     <Button asChild className="bg-rose-500 hover:bg-rose-600"  >
-                      <a href="/contact-us">Contact Us!</a>
+                      <a href="/contact">Contact Us!</a>
                     </Button>
                   </div>
                 </div>

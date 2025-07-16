@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
 import Compatibility from "@/section/compatibility";
 import ContactNew from "@/section/contact-new";
-import RetailAssistClient from "@/section/retailAssist-client";
+
+import Image from "next/image";
 
 interface RetailImage {
   image_link: string;
@@ -37,13 +38,13 @@ export default function RetailAssist() {
     >
       {/* Hero Section with Animation */}
       <motion.div
-        className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 py-16 md:py-24 overflow-hidden"
+      className="relative bg-gradient-to-r from-blue-800 via-blue-600 to-blue-800 py-16 md:py-24 overflow-hidden"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-800/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <motion.div
@@ -80,9 +81,11 @@ export default function RetailAssist() {
               transition={{ delay: 0.5, duration: 0.8 }}
             >
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-w-16 aspect-h-9">
-                <img 
+                <Image 
                   src="/retail/retail-assist.jpg" 
                   alt="Retail Assist POS Interface" 
+                  width={600}
+                  height={400}
                   className="w-[600px] h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end">
@@ -147,7 +150,7 @@ export default function RetailAssist() {
           {[
             {
               title: "Intuitive Sales Interface",
-              desc: "Streamlined checkout process with barcode scanning, quick product search, and customizable hotkeys for faster transactions.",
+              desc: "Streamline checkout process with barcode scanning, quick product search, and customizable hotkeys for faster transactions.",
               color: "blue",
               icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -245,28 +248,19 @@ export default function RetailAssist() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
+              onClick={() => handleImageClick(image)}
             >
               <div className="aspect-w-16 aspect-h-9 bg-gray-100 overflow-hidden">
-                <img
+                <Image
                   src={image.image_link}
                   alt={image.alt}
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                  onClick={() => handleImageClick(image)}
+                  
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div className="p-4 text-white w-full">
-                  <p className="font-medium text-sm">{image.alt}</p>
-                  <div className="mt-2">
-                    <button 
-                      onClick={() => handleImageClick(image)} 
-                      className="text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm px-3 py-1 rounded-full transition-all duration-300"
-                    >
-                      View Larger
-                    </button>
-                  </div>
-                </div>
-              </div>
+     
             </motion.div>
           ))}
         </div>
@@ -302,13 +296,13 @@ export default function RetailAssist() {
 
       {/* Call to Action Section */}
       <motion.div
-        className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 py-16 md:py-20 relative overflow-hidden"
+        className="bg-blue-500 py-16 md:py-20 relative overflow-hidden"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <motion.div
@@ -341,11 +335,18 @@ export default function RetailAssist() {
           </div>
         </div>
       </motion.div>
-
-      <div id="compatibility" className="p-20">
+      <br/>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Compatibility/>
-      </div>
-      <RetailAssistClient/>
+        </div>
+      </motion.div>
+    
       <div id="contact">
         <ContactNew/>
       </div>
@@ -355,9 +356,11 @@ export default function RetailAssist() {
           {selectedImage && (
             <>
               <DialogTitle className="sr-only">{selectedImage.alt}</DialogTitle>
-              <img
+              <Image
                 src={selectedImage.image_link}
                 alt={selectedImage.alt}
+                width={600}
+                height={400}
                 className="w-full rounded-lg"
               />
             </>
