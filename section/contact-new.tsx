@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, LinkedinIcon, Mail, Map, MapPin, Phone, Send, Check } from "lucide-react";
+import { Facebook, Instagram, LinkedinIcon, Mail,  MapPin, Phone, Send, Check } from "lucide-react";
 
 // Animation variants with smoother easing
 const containerVariants = {
@@ -152,7 +152,7 @@ export default function ContactNew() {
                 <input type="hidden" name="_subject" value="New Contact Form Submission" />
                 <input type="hidden" name="_captcha" value="true" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://divergentechphil.com/thank-you" />
+                <input type="hidden" name="_next" value="https://www.divergentechphil.com/thank-you" />
                 {/* If you don't have a thank-you page, use your domain homepage */}
                 <input type="hidden" name="_honeypot" value="" />
                 <motion.div
@@ -179,14 +179,28 @@ export default function ContactNew() {
                       htmlFor="email"
                       className="block text-gray-700 mb-2"
                     >
-                      Your Email
+                      Contact Number
                     </label>
                     <input
                       type="email"
                       name="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
-                      placeholder="john@example.com"
+                      placeholder="09111111111"
                       required
+                    />
+                
+                  </motion.div>
+
+                  <motion.div>
+                    <label htmlFor="email" className="block text-gray-700 mb-2">
+                      Email Address
+                    </label>
+                        <input 
+                      type="text"
+                      name="email"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
+                        placeholder="johndoe@mail.com"
+                        required
                     />
                   </motion.div>
                 </motion.div>
@@ -236,7 +250,7 @@ export default function ContactNew() {
                   {isSubmitted ? (
                     <div className="flex items-center gap-2 text-green-600">
                       <Check className="size-5" />
-                      <span>Message sent successfully! We'll be in touch soon.</span>
+                      <span>Message sent successfully! We&apos;ll be in touch soon.</span>
                     </div>
                   ) : (
                     <Button 

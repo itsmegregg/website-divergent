@@ -4,9 +4,7 @@ import { Zap, Users, Box, BarChart2, Bell, Printer, Tablet, CreditCard, MapPin, 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
+
 import ContactNew from "@/section/contact-new";
 
 const services = [
