@@ -109,19 +109,25 @@ export default function ContactNew() {
               className="flex space-x-4"
             >
               <a
-                href="https://www.linkedin.com/in/divergent-phil-3a72a7200"
+                href="https://www.linkedin.com/in/divergent-phil-3a72a7200/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"
               >
                 <LinkedinIcon />
               </a>
               <a
                 href="https://www.facebook.com/DivergentPOS"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"
               >
                 <Facebook />
               </a>
               <a
                 href="https://www.instagram.com/divergentechphils"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"
               >
                 <Instagram />
@@ -145,16 +151,10 @@ export default function ContactNew() {
               <motion.form
                 variants={containerVariants}
                 className=""
-                action="https://formsubmit.co/sales@divergentechphil.com"
+                action="/process-form.php"
                 method="POST"
               >
-                {/* FormSubmit configuration fields */}
-                <input type="hidden" name="_subject" value="New Contact Form Submission" />
-                <input type="hidden" name="_captcha" value="true" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://www.divergentechphil.com/thank-you" />
-                {/* If you don't have a thank-you page, use your domain homepage */}
-                <input type="hidden" name="_honeypot" value="" />
+                {/* Form fields - no FormSubmit specific fields needed anymore */}
                 <motion.div
                   variants={itemVariants}
                   className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
@@ -183,7 +183,7 @@ export default function ContactNew() {
                     </label>
                     <input
                       type="text"
-                      name="email"
+                      name="phone"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
                       placeholder="09111111111"
                       required
