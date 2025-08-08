@@ -4,6 +4,7 @@ import Clients from "@/section/clients";
 import Services from "@/section/services";
 import Support from "@/section/support";
 import ContactNew from "@/section/contact-new";
+import CustomerFeedback from "@/section/customer-feedback";
 
 
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Services/>
       <Support/>
       <Clients/>
+      <CustomerFeedback/>
       <ContactNew/>
     </>
   );

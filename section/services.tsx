@@ -240,16 +240,7 @@ export default function ServicesSection(){
     </div>
     </div>
       {/* Contact Section */}
-      <div id="contact">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <ContactNew/>
-        </motion.div>
-      </div>
+    
     </div>
   );
 }
