@@ -144,7 +144,7 @@ const trustedMalls = [
   { name: "Ortigas Malls", logo: "https://ortigasmalls.sgp1.digitaloceanspaces.com/cms_images/hnI4BbHjC7xCKhXXxpGUygg30ilWl1OdMfHNTDtJ.webp" },
   { name: "Eton Centris", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVCMlZg39K3xne3bRFwu52sCldVxI1Do-dzQ&s" },
   { name: "GreenField District", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGoLrlV6a7ngq_t5V8-VVVBeSsRskTRwBYig&s" },
-  { name: "Other Malls & Retailers, both Local & Overseas", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrjlBkx9I0IP_ZQP3htZXCSlZ_qwCPQijZUX7Fz5gt89sVrLowkbsLKweBJie-_JA9JNQ&usqp=CAU" },
+  { name: "Other Malls & Retailers", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrjlBkx9I0IP_ZQP3htZXCSlZ_qwCPQijZUX7Fz5gt89sVrLowkbsLKweBJie-_JA9JNQ&usqp=CAU" },
 ];
 
 const forData = [
