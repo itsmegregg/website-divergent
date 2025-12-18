@@ -5,6 +5,7 @@ import Services from "@/section/services";
 import Support from "@/section/support";
 import ContactNew from "@/section/contact-new";
 import CustomerFeedback from "@/section/customer-feedback";
+import VideoPlayerDialog from "@/components/videoDialog";
 
 
 
@@ -17,9 +18,10 @@ export const metadata = {
   description: "Home Page",
 };
 export default function Home() {
+
   return (
     <>
-
+      <VideoPlayerDialog />
       <AnimatedHero/>
       <Services/>
       <Support/>
