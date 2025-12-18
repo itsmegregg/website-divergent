@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -60,6 +60,32 @@ export default function ContactNew() {
       }, 5000);
     }
   }, []);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('/process-form.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }
+    } catch (error) {
+      console.error('Submission error', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (e: any) => {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  };
 
   return (
     <section id="contact" className="py-20">
@@ -259,30 +285,3 @@ export default function ContactNew() {
     </section>
   );
 }
-
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsLoading(true);
-  
-  try {
-    const response = await fetch('/process-form.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
-    
-    if (response.ok) {
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }
-  } catch (error) {
-    console.error('Submission error', error);
-  } finally {
-    setIsLoading(false);
-  }
-};
-
-const handleChange = (e) => {
-  setFormData({...formData, [e.target.name]: e.target.value});
-};

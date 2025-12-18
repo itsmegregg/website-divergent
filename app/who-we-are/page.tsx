@@ -521,12 +521,12 @@ export default function WhoAreWe() {
                       </Badge>
                     </div>
                   </CardContent>
-                </Card>
-              </MotionDiv>
+                  </Card>
+                </MotionDiv>
+            </MotionDiv>
             ))}
-          </MotionDiv>
-          
 
+        </MotionDiv>
         </div>
       </MotionSection>
 
