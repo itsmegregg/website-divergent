@@ -2,6 +2,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+// Create aliases for motion components to avoid JSX member expression parsing issues
+const MotionDiv = motion.div;
+const MotionH1 = motion.h1;
+const MotionH2 = motion.h2;
+const MotionSection = motion.section;
+const MotionImg = motion.img;
 import { 
   Card, 
   CardContent, 
@@ -36,23 +43,33 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 25, scale: 0.98 },
+  hidden: { opacity: 0, y: 40, rotate: -2 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    scale: 1,
+    rotate: 0,
     transition: { 
-      duration: 0.5, 
-      ease: [0.25, 0.1, 0.25, 1.0] // Smoother cubic bezier
-    } 
+      type: "spring",
+      damping: 12,
+      stiffness: 100,
+      duration: 0.6
+    }
   },
+};
+
+const cardHoverVariants = {
+  hover: { 
+    y: -8,
+    scale: 1.03,
+    boxShadow: "0px 10px 20px rgba(0,0,0,0.1)"
+  }
 };
 
 const sectionVariants = {
@@ -162,7 +179,7 @@ export default function WhoAreWe() {
     <div className="w-full flex flex-col">
       <div className="min-h-[500px] md:h-[750px] w-full mx-auto p-4 md:p-20 flex flex-col md:flex-row bg-stone-50">
         <div className="w-full md:flex-1 order-2 md:order-1">
-          <motion.div
+          <MotionDiv
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -171,65 +188,64 @@ export default function WhoAreWe() {
             <Badge className="bg-blue-500">
               Divergent Technologies Phils., INC.
             </Badge>
-            <motion.h1
+            <MotionH1
               variants={itemVariants}
               className="text-5xl md:text-7xl lg:text-7xl font-bold"
             >
-              Who 
-              We 
+              Who We
               <span className="bg-orange-500 rounded-lg px-2 text-gray-50 ml-2">
                 Are?
               </span>
-            </motion.h1>
-            <motion.h2
+            </MotionH1>
+            <MotionH2
               variants={itemVariants}
               className="text-xl md:text-2xl lg:text-2xl font-semibold text-neutral-600 pt-3"
             >
               Pioneering Business Solutions in the Philippines for over 27 years.
-            </motion.h2>
-          </motion.div>
+            </MotionH2>
+          </MotionDiv>
         </div>
         <div className="w-full md:flex-1 bg-neutral-50 order-1 md:order-2">
-          <motion.div
+          <MotionDiv
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.img
+            <MotionImg
               variants={itemVariants}
               src='/illustrator/hand-drawn-business-communication-illustration.png'
               className="w-full h-auto"
               alt="illustrator"
             />
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
       <div className="max-w-7xl mx-auto pt-5 px-4 md:px-6">
-        <motion.h2
+        <MotionH2
           variants={itemVariants}
           className="text-xl font-semibold text-neutral-700"
         >
           Founded in July 1997, DTPI is a premier BIR-accredited POS provider, delivering end-to-end business and financial solutions tailored for a diverse range of industries.
-        </motion.h2>
-        <motion.div
+        </MotionH2>
+        <MotionDiv
           variants={containerVariants}
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 w-full max-w-7xl mx-auto py-6"
         >
           {forData.map((data, index) => (
-            <motion.div
+            <MotionDiv
               key={index}
               variants={itemVariants}
               className="h-full"
             >
               <div className="border-2 rounded">
-              <motion.div
+              <MotionDiv
         className="flex flex-col items-center justify-center p-6 text-center space-y-3"
        
         whileHover="hovered" 
         initial="rest"      
       >
         {/* The icon */}
-        <motion.div
+        <MotionDiv
           className="w-10 h-10 text-primary mb-2"
           variants={{
             rest: { rotate: 0 }, // No rotation in the rest state
@@ -244,19 +260,19 @@ export default function WhoAreWe() {
           }}
         >
           <data.icon className="w-full h-full" /> {/* Make sure icon takes full space */}
-        </motion.div>
+        </MotionDiv>
 
     
         <span className="text-slate-700 text-lg font-semibold">
           {data.name}
         </span>
-      </motion.div>
+      </MotionDiv>
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
-        </motion.div>
+        </MotionDiv>
       
-      <motion.div 
+      <MotionDiv 
         variants={itemVariants}
         initial="hidden"
         animate="visible"
@@ -274,7 +290,7 @@ export default function WhoAreWe() {
             </h2>
           </div>
         </div>
-      </motion.div>
+      </MotionDiv>
 
       </div>
 
@@ -301,7 +317,7 @@ export default function WhoAreWe() {
           </div>
       </div>
 
-      <motion.section 
+      <MotionSection 
         variants={sectionVariants}
         initial="hidden"
         animate="visible"
@@ -310,7 +326,7 @@ export default function WhoAreWe() {
 
 
         
-        <motion.div variants={itemVariants} className="relative z-10 flex flex-col items-center mb-16">
+        <MotionDiv variants={itemVariants} className="relative z-10 flex flex-col items-center mb-16">
           <div className="flex items-center justify-center mb-4">
             <div className="h-[1px] w-12 bg-blue-300 mr-4"></div>
             <Badge className="bg-blue-500 rounded px-1 text-gray-50">
@@ -326,11 +342,11 @@ export default function WhoAreWe() {
           <p className="text-lg md:text-xl leading-relaxed text-slate-600 max-w-3xl mx-auto text-center">
             Leverage our deep industry knowledge and technical proficiency for superior business outcomes.
           </p>
-        </motion.div>
+        </MotionDiv>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 relative z-10">
           {/* Left side - Image with overlay content */}
-          <motion.div 
+          <MotionDiv 
             variants={itemVariants} 
             className="lg:col-span-5 rounded-2xl overflow-hidden "
           >
@@ -373,16 +389,16 @@ export default function WhoAreWe() {
                 
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
           
           {/* Right side - Cards */}
-          <motion.div 
+          <MotionDiv 
             className="lg:col-span-7 space-y-5" 
             variants={containerVariants}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {expertiseAdvantages.map((item, idx) => (
-                <motion.div 
+                <MotionDiv 
                   key={idx} 
                   variants={itemVariants}
                   whileHover={{ y: -8, scale: 1.02 }}
@@ -403,11 +419,11 @@ export default function WhoAreWe() {
                       <p className="text-slate-600 leading-relaxed">{item.description}</p>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </MotionDiv>
               ))}
             </div>
             
-            <motion.div 
+            <MotionDiv 
               variants={itemVariants}
               className="pt-2"
             >
@@ -428,12 +444,12 @@ export default function WhoAreWe() {
                 </CardContent>
                 
               </Card>
-            </motion.div>
-          </motion.div>
+            </MotionDiv>
+          </MotionDiv>
         </div>
-      </motion.section>
+      </MotionSection>
 
-      <motion.section 
+      <MotionSection 
         variants={sectionVariants}
         initial="hidden"
         animate="visible"
@@ -444,7 +460,7 @@ export default function WhoAreWe() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div 
+          <MotionDiv 
             variants={itemVariants} 
             className="text-center mb-16"
           >
@@ -457,32 +473,42 @@ export default function WhoAreWe() {
             <p className="text-lg md:text-xl leading-relaxed text-slate-600 max-w-3xl mx-auto">
               We are proudly accredited and operational in major commercial hubs nationwide, serving the country&apos;s most prestigious retail establishments.
             </p>
-          </motion.div>
+          </MotionDiv>
           
-          <motion.div 
+          <MotionDiv 
             variants={containerVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial="hidden"
+            animate="show"
           >
             {trustedMalls.map((mall, idx) => (
-              <motion.div
+              <MotionDiv
                 key={idx}
                 variants={itemVariants}
-                whileHover={{ y: -8, scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover="hover"
+                className="perspective-1000"
               >
-                <Card className="h-full transition-all overflow-hidden border border-slate-200 group">
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></div>
-                  <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-                    {mall.logo ? (
-                      <div className="relative w-full h-16 mb-4">
-                        <Image 
+                <MotionDiv
+                  variants={cardHoverVariants}
+                  className="h-full transform-style-preserve-3d"
+                >
+                  <Card className="h-full border border-slate-200/70 bg-card/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]" />
+                    <CardContent className="p-6 flex flex-col items-center justify-center h-full">
+                      {mall.logo ? (
+                        <MotionDiv 
+                          className="relative w-full h-16 mb-4"
+                          whileHover={{ rotate: [0, -2, 2, -1, 0] }}
+                          transition={{ duration: 0.4 }}
+                        >
+                         <Image 
                           src={mall.logo} 
                           alt={mall.name}	 
                           fill
                           className="object-contain"
                           sizes="(max-width: 768px) 40vw, 20vw"
                         />
-                      </div>
+                      </MotionDiv>
                     ) : (
                       <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-100 to-green-100 flex items-center justify-center mb-4">
                         <Building className="w-8 h-8 text-slate-700" />
@@ -496,13 +522,13 @@ export default function WhoAreWe() {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </MotionDiv>
             ))}
-          </motion.div>
+          </MotionDiv>
           
 
         </div>
-      </motion.section>
+      </MotionSection>
 
       <ContactNew/>
     </div>

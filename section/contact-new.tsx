@@ -4,7 +4,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, LinkedinIcon, Mail,  MapPin, Phone, Send, Check } from "lucide-react";
+import { Facebook, Instagram, LinkedinIcon, Mail,  MapPin, Phone, Send, Check, Loader2 } from "lucide-react";
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 // Animation variants with smoother easing
 const containerVariants = {
@@ -32,8 +35,17 @@ const itemVariants = {
 };
 
 export default function ContactNew() {
-  // Simple state to track if the form was just submitted via local testing
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  // Simple state to track if the form was just submitted via local testing
 
   // This will only work for local testing, not in the deployed static site
   useEffect(() => {
@@ -141,126 +153,104 @@ export default function ContactNew() {
             animate="visible"
             className=""
           >
-            <Card className="p-8">
+            <Card className="p-8 bg-card shadow-xl">
               <motion.h3
                 variants={itemVariants}
-                className="text-2xl font-bold mb-6 text-left"
+                className="text-2xl font-bold mb-6 text-left text-primary"
               >
                 Send Us a Message
               </motion.h3>
               <motion.form
                 variants={containerVariants}
-                className=""
-                action="/process-form.php"
-                method="POST"
+                onSubmit={handleSubmit}
               >
-                {/* Form fields - no FormSubmit specific fields needed anymore */}
-                <motion.div
-                  variants={itemVariants}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
-                >
-                  <motion.div className="">
-                    <label
-                      htmlFor="name"
-                      className="block text-gray-700 mb-2"
-                    >
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-2">
+                    <Label className="text-muted-foreground">Your Name</Label>
+                    <Input
                       name="name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="John Doe"
-                      required
+                      className="rounded-xl h-12"
                     />
-                  </motion.div>
-                  <motion.div className="">
-                    <label
-                      htmlFor="text"
-                      className="block text-gray-700 mb-2"
-                    >
-                      Contact Number
-                    </label>
-                    <input
-                      type="text"
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label className="text-muted-foreground">Contact Number</Label>
+                    <Input
                       name="phone"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="09111111111"
-                      required
+                      className="rounded-xl h-12"
                     />
+                  </div>
                 
-                  </motion.div>
-
-                  <motion.div>
-                    <label htmlFor="email" className="block text-gray-700 mb-2">
-                      Email Address
-                    </label>
-                        <input 
+                  <div className="space-y-2">
+                    <Label className="text-muted-foreground">Email Address</Label>
+                    <Input
                       type="email"
                       name="email"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
-                        placeholder="johndoe@mail.com"
-                        required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="johndoe@mail.com"
+                      className="rounded-xl h-12"
                     />
-                  </motion.div>
-                </motion.div>
-
-                <motion.div
-                  variants={itemVariants}
-                  className="mb-6"
-                >
-                  <label
-                    htmlFor="subject"
-                    className="block text-gray-700 mb-2"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
-                    placeholder="How can we help you?"
-                    required
-                  />
-                </motion.div>
-
-                <motion.div
-                  variants={itemVariants}
-                  className="mb-6"
-                >
-                  <label
-                    htmlFor="message"
-                    className="block text-gray-700 mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
+                  </div>
+                
+                  <div className="space-y-2">
+                    <Label className="text-muted-foreground">Subject</Label>
+                    <Input
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="How can we help you?"
+                      className="rounded-xl h-12"
+                    />
+                  </div>
+                </div>
+              
+                <div className="mb-6">
+                  <Label className="text-muted-foreground">Message</Label>
+                  <Textarea
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm"
+                    className="rounded-xl"
                     placeholder="Your message here..."
-                    required
-                  ></textarea>
-                </motion.div>
-
-                <motion.div
-                  variants={itemVariants}
-                  className="flex flex-col gap-3"
-                >
+                  />
+                </div>
+              
+                <div className="flex flex-col gap-3">
                   {isSubmitted ? (
-                    <div className="flex items-center gap-2 text-green-600">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-2 p-4 bg-green-50 rounded-xl text-green-600"
+                    >
                       <Check className="size-5" />
-                      <span>Message sent successfully! We&apos;ll be in touch soon.</span>
-                    </div>
+                      <span>Message sent successfully! We'll be in touch soon.</span>
+                    </motion.div>
                   ) : (
                     <Button 
                       type="submit"
-                      className="text-white py-3 !rounded-button whitespace-nowrap cursor-pointer"
+                      className="py-6 rounded-xl text-white font-medium"
+                      disabled={isLoading}
                     >
-                      <Send className="size-5 mr-2" /> Send Message
+                      {isLoading ? (
+                        <div className="flex items-center gap-2">
+                          <Loader2 className="h-4 w-4 animate-spin" /> Sending...
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-2">
+                          <Send className="size-5 mr-2" /> Send Message
+                        </div>
+                      )}
                     </Button>
                   )}
-                </motion.div>
+                </div>
               </motion.form>
             </Card>
           </motion.div>
@@ -269,3 +259,30 @@ export default function ContactNew() {
     </section>
   );
 }
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsLoading(true);
+  
+  try {
+    const response = await fetch('/process-form.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+    
+    if (response.ok) {
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }
+  } catch (error) {
+    console.error('Submission error', error);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+const handleChange = (e) => {
+  setFormData({...formData, [e.target.name]: e.target.value});
+};
