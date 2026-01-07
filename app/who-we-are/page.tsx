@@ -474,13 +474,15 @@ export default function WhoAreWe() {
               We are proudly accredited and operational in major commercial hubs nationwide, serving the country&apos;s most prestigious retail establishments.
             </p>
           </MotionDiv>
-          
+     
           <MotionDiv 
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             initial="hidden"
-            animate="show"
+           animate="visible"
           >
+
+     
             {trustedMalls.map((mall, idx) => (
               <MotionDiv
                 key={idx}

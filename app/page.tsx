@@ -5,7 +5,7 @@ import Services from "@/section/services";
 import Support from "@/section/support";
 import ContactNew from "@/section/contact-new";
 import CustomerFeedback from "@/section/customer-feedback";
-import VideoPlayerDialog from "@/components/videoDialog";
+// import VideoPlayerDialog from "@/components/videoDialog";
 
 
 
@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <>
-      <VideoPlayerDialog />
+      {/* <VideoPlayerDialog /> */}
       <AnimatedHero/>
       <Services/>
       <Support/>
