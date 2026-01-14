@@ -119,7 +119,7 @@ export default function ContactNew() {
                   <p className="text-sm text-muted-foreground">Contact us</p>
                   <div className="flex flex-row gap-2">
                   <Phone />                 
-                    <p>09178324735 / 09988462397 / 8812-2656 / 8812-2148 / 8362-8794 / 7117-9925</p>
+                    <p>09178324735 / 09988462397 / 8812-2656 / 8812-2148 / 8362-8794</p>
                   </div>
                 </div>    
 
