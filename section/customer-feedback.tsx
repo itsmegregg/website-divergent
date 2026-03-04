@@ -17,6 +17,13 @@ const m = motion;
 const testimonials: Testimonial[] = [
   {
     quote:
+      "We are pleased and satisfied with Divergent’s POS System installed here at Emerald Restaurant. The POS System is not complicated but it met all of our requirements. It is very functional and user friendly. Aside from the software itself, we are satisfied with the quality of Divergent’s after sales support and service. We foresee that our partnership will go a long way. It is worth recommending.",
+    author: "Jhang Acilo",
+    company: "Emerald Restaurant",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaZGMKPIYDAZXrKcskSduhRy3bjn22Aa1McQ&s",
+  },
+  {
+    quote:
       "I would like to commend Divergent Technologies Phils., Inc. for the services they have provided us - up to date software, timely response to any whatever issue may arise.  We have been partners for about two decades now and so far, so good.  We are using the Food Connect program for some of our branches as well as the FastPOS for our food court branch.",
     author: "Ms. Fara Solidum",
     company: "Bacolod Chicken Inasal",
