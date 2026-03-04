@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import ContactNew from "@/section/contact-new";
-import Image from "next/image";
 import { useState } from "react";
 
 function Carousel({ images }: { images: string[] }) {
