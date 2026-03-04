@@ -17,6 +17,20 @@ const m = motion;
 const testimonials: Testimonial[] = [
   {
     quote:
+      "I would like to commend Divergent Technologies Phils., Inc. for the services they have provided us - up to date software, timely response to any whatever issue may arise.  We have been partners for about two decades now and so far, so good.  We are using the Food Connect program for some of our branches as well as the FastPOS for our food court branch.",
+    author: "Ms. Fara Solidum",
+    company: "Bacolod Chicken Inasal",
+    image: "https://www.bacolodchickeninasal.com/misc-images/logo.png",
+  },
+  {
+    quote:
+      "We've had a great experience using Divergent Food Connect POS software. It's user-friendly, reliable, and has helped streamline our daily operations efficiently. The customer support team is always on point—responsive, knowledgeable, and quick to resolve any concerns. Highly recommended!",
+    author: "Mr. Christopher Tarrega",
+    company: "Philippine Pastries Inc. / Bizu Patisserie",
+    image: "https://bizu.ph/cdn/shop/files/Logo_2.png?v=1726797402&width=200",
+  },
+  {
+    quote:
       "Good after sales service. Technical staffs are outstanding. Very Satisfied.",
     author: "Kipling Philippines",
     company: "Kipling Philippines",
@@ -38,7 +52,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "We’ve been with Divergent for almost a decade, truthfully, we can’t imagine working with anyone else. Products are as what you expect but their customers service exceeds our expectation.",
+      "We've been with Divergent for almost a decade, truthfully, we can't imagine working with anyone else. Products are as what you expect but their customers service exceeds our expectation.",
     author: "Suki Fashion Inc.",
     company: "Suki Fashion Inc.",
     image: "https://cdn.shopify.com/s/files/1/0066/0471/8198/files/Suki_Logo.jpg?height=628&pad_color=fff&v=1613672899&width=1200",
@@ -50,22 +64,28 @@ const testimonials: Testimonial[] = [
     company: "Kalin Incorporated (Broadway Gems/Bagel Girl/Aksesoriz)",
     image: "https://assets.bossjob.com/companies/14836/logo/ZGaIN3wrZMhJqkv3IexpL99Jj7SU5P2D84mpUcKA.jpeg",
 
-    },
-    {
-        quote:
-          "I love divergent The service and the products Mabilis kausap ung team and very approachable too. Always there to help And to explain mga items natin No regrets so far with divergent",
-        author: "Taste and Tell",
-        company: "Taste and Tell",
-        image: "https://www.tasteandtellmnl.com/cdn/shop/files/taste_and_tell.png?v=1627527766"
-      },
+  },
+  {
+    quote:
+      "I love divergent The service and the products Mabilis kausap ung team and very approachable too. Always there to help And to explain mga items natin No regrets so far with divergent",
+    author: "Taste and Tell",
+    company: "Taste and Tell",
+    image: "https://www.tasteandtellmnl.com/cdn/shop/files/taste_and_tell.png?v=1627527766"
+  },
   {
     quote:  
-      "For the three(3)years that Verena's Restaurant using the POS of Divergent Technologies Philippines. The Company could attest that is good. Dependable, and user-friend. the Technical Group could easily be contacted and it immediatelty akes action and fix the problem if the same issue arises.",
+      "For the three (3) years that Verena's Restaurant using the POS of Divergent Technologies Philippines. The Company could attest that is good, dependable, and user-friendly. the Technical Group could easily be contacted and it immediately takes action and fix the problem if the same issue arises.",
     author: "VERENA'S RESTAURANT",
     company: "VERENA'S RESTAURANT",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg7H8-GnsS-FGI-qKVEttV2BbgqQUXKW3LmA&s", 
-      },
-
+  },
+  {
+    quote:
+      "Over the years, our partnership with Divergent Technologies Inc has been nothing short of exceptional. Their reliable technology, seamless integration, and unwavering support have played a pivotal role in optimizing our operations and enhancing customer experiences. Their commitment to innovation and responsive customer service truly set them apart in the industry. We're grateful for their continued partnership and look forward to many more years of success together.",
+    author: "Tom N Toms",
+    company: "Tom N Toms",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlIzDlmWg3ce_0NOT8lCUioUkOhiE6V0Lwg&s"
+  },
   {
     quote:
       "I've been using Divergent for 2 years now and am very happy with their service - their system is solid and smooth, and the team is very responsive and helpful in providing solutions for my business. They offer the best of both worlds - functionality and familiarity, easy to use and already accredited with malls; while also keeping up-to-date with current innovations and digitization like real-time data tracking. They take time to understand my operational needs and are fast to program a custom feature where needed. Definitely recommend, whether for new companies and startups as well as established or scaling businesses!",
@@ -75,11 +95,11 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Over the years, our partnership with Divergent Technologies Inc has been nothing short of exceptional. Their reliable technology, seamless integration, and unwavering support have played a pivotal role in optimizing our operations and enhancing customer experiences. Their commitment to innovation and responsive customer service truly set them apart in the industry. We're grateful for their continued partnership and look forward to many more years of success together.",
-    author: "Tom N Toms",
-    company: "Tom N Toms",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlIzDlmWg3ce_0NOT8lCUioUkOhiE6V0Lwg&s"
-      },
+      "We are pleased to share our positive feedback regarding our experience with the POS software and the services rendered to Fruitasgroup / Balai ni Fruitas and Ling Nam. The POS system has been reliable, user-friendly, and well-suited to our daily operations. It has significantly helped improve transaction efficiency, reporting accuracy, and overall workflow. The system's stability and ease of use have contributed to smoother store operations. In addition, Divergent team has consistently provided excellent support and assistance. Concerns and requests were addressed promptly and professionally, demonstrating strong technical knowledge and a genuine commitment to customer satisfaction. The implementation and after-sales support were both handled efficiently. Overall, we are very satisfied with the performance of Divergent’s POS software and the quality of service provided. We expect this level of service to be consistently maintained as our business relationship continues.",
+    author: "Mr. Lito Dacaymat",
+    company: "Fruitasgroup, Inc., Balai Ni Fruitas, Inc., Lingnam Food Inc.",
+    image: "https://fruitasholdings.com/wp/wp-content/uploads/2024/08/Fruitas-1-300x200.png",
+  },
 ];
 
 export default function CustomerFeedback() {
