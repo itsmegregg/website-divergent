@@ -288,7 +288,7 @@ export default function RetailAssist() {
         <HeroVideoDialog
           className="dark:hidden block"
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/pGQpHhBLZFk?si=mScqKxBHNfjbdwCd"
+          videoSrc="https://www.youtube.com/watch?v=pGQpHhBLZFk"
           thumbnailSrc="/rms/rms-preview.png"
           thumbnailAlt="Hero Video"
         />  

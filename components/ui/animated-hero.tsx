@@ -42,11 +42,13 @@ function Hero() {
             </motion.p>
           </div>
           <motion.div className="flex flex-row gap-3" variants={itemVariants}>
-            <Button className="gap-4" variant="outline">
+        <Link href="/contact">
+              <Button className="gap-4 cursor-pointer" variant="outline">
               Book A Demo <PhoneCall className="w-4 h-4" />
             </Button>
+        </Link>
             <Link href="/services">
-              <Button className="gap-4" variant="outline">
+              <Button className="gap-4 cursor-pointer" variant="outline">
                 Our services <MoveRight className="w-4 h-4" />
               </Button>
             </Link>

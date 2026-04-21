@@ -317,7 +317,7 @@ export default function FoodConnect() {
         <HeroVideoDialog
           className="dark:hidden block"
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/XgkPS00xMkM?si=vDRVb60ibnbgpysk"
+          videoSrc="https://www.youtube.com/watch?v=GPc8QK7S4NI"
           thumbnailSrc="/rms/rms-preview.png"
           thumbnailAlt="Hero Video"
         />  
