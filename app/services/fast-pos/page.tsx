@@ -281,7 +281,7 @@ export default function FastPOS() {
         <HeroVideoDialog
           className="dark:hidden block"
           animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/GPc8QK7S4NI?si=tvcMHqOjBSy0IgBL"
+          videoSrc="https://www.youtube.com/watch?v=GPc8QK7S4NI"
           thumbnailSrc="/rms/rms-preview.png"
           thumbnailAlt="Hero Video"
         />  

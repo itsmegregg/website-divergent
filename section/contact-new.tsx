@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, LinkedinIcon, Mail,  MapPin, Phone, Send, Check, Loader2 } from "lucide-react";
+import { Facebook, Instagram, LinkedinIcon, Mail,  MapPin, Phone, Send } from "lucide-react";
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -35,8 +35,6 @@ const itemVariants = {
 };
 
 export default function ContactNew() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -45,43 +43,14 @@ export default function ContactNew() {
     message: ''
   });
 
-  // Simple state to track if the form was just submitted via local testing
-
-  // This will only work for local testing, not in the deployed static site
   useEffect(() => {
-    // Check if there's a 'submitted' parameter in the URL
     const queryParams = new URLSearchParams(window.location.search);
     if (queryParams.get('submitted') === 'true') {
-      setIsSubmitted(true);
-      
-      // Clear the URL parameter after a short delay
       setTimeout(() => {
         window.history.replaceState({}, document.title, window.location.pathname);
       }, 5000);
     }
   }, []);
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
-    try {
-      const response = await fetch('/process-form.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      
-      if (response.ok) {
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000);
-      }
-    } catch (error) {
-      console.error('Submission error', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleChange = (e: any) => {
     setFormData({...formData, [e.target.name]: e.target.value});
@@ -119,7 +88,7 @@ export default function ContactNew() {
                   <p className="text-sm text-muted-foreground">Contact us</p>
                   <div className="flex flex-row gap-2">
                   <Phone />                 
-                    <p>09178324735 / 09988462397 / 8812-2656 / 8812-2148 / 8362-8794 / 7117-9925</p>
+                    <p>09178324735 / 09988462397 / 8812-2656 / 8812-2148 / 8362-8794</p>
                   </div>
                 </div>    
 
@@ -135,7 +104,7 @@ export default function ContactNew() {
                   <p className="text-sm text-muted-foreground">Visit us</p>
                   <div className="flex flex-row gap-2">
                     <MapPin/>
-                    <p>Unit 3B Cafel Bldg., 7505 Santillan St. Brgy. Pio Del Pilar 1230 Makati City</p></div>
+                    <p>7F Pacifica One Center, 2178 Chino Roces Ave, Makati City, 1230 Metro Manila</p></div>
                 </div>   
             </div>
 
@@ -188,7 +157,8 @@ export default function ContactNew() {
               </motion.h3>
               <motion.form
                 variants={containerVariants}
-                onSubmit={handleSubmit}
+                action="/process-form.php"
+                method="POST"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-2">
@@ -250,32 +220,14 @@ export default function ContactNew() {
                 </div>
               
                 <div className="flex flex-col gap-3">
-                  {isSubmitted ? (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex items-center gap-2 p-4 bg-green-50 rounded-xl text-green-600"
-                    >
-                      <Check className="size-5" />
-                      <span>Message sent successfully! We'll be in touch soon.</span>
-                    </motion.div>
-                  ) : (
-                    <Button 
-                      type="submit"
-                      className="py-6 rounded-xl text-white font-medium"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? (
-                        <div className="flex items-center gap-2">
-                          <Loader2 className="h-4 w-4 animate-spin" /> Sending...
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-2">
-                          <Send className="size-5 mr-2" /> Send Message
-                        </div>
-                      )}
-                    </Button>
-                  )}
+                  <Button 
+                    type="submit"
+                    className="py-6 rounded-xl text-white font-medium"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Send className="size-5 mr-2" /> Send Message
+                    </div>
+                  </Button>
                 </div>
               </motion.form>
             </Card>

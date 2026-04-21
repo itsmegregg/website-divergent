@@ -139,7 +139,7 @@ export default function ContactUs() {
                   <MapPin className="w-5 h-5 text-blue-600 mr-3" />
                   <div>
                     <p className="text-sm text-gray-500">Visit us at</p>
-                    <p className="font-medium">Unit 3B Cafel Bldg., 7505 Santillan St. Brgy. Pio Del Pilar 1230 Makati, Philippines</p>
+                    <p className="font-medium">7F Pacifica One Center, 2178 Chino Roces Ave, Makati City, 1230 Metro Manila</p>
                   </div>
                 </div>
               </div>
