@@ -10,5 +10,5 @@ export default function ECommerceLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <>{ children }</>;
 }

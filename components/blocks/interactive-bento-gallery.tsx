@@ -22,6 +22,8 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
 
     // Intersection Observer to detect if video is in view and play/pause accordingly
     useEffect(() => {
+
+        const video = videoRef.current
         const options = {
             root: null,
             rootMargin: '50px',
@@ -34,12 +36,12 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
             });
         }, options);
 
-        if (videoRef.current) {
-            observer.observe(videoRef.current); // Start observing the video element
+        if (video) {
+            observer.observe(video); // Start observing the video element
         }
 
         return () => {
-            const currentVideoRef = videoRef.current;
+            const currentVideoRef = video;
             if (currentVideoRef) {
                 observer.unobserve(currentVideoRef); // Clean up observer when component unmounts
             }
@@ -48,24 +50,24 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
     // Handle video play/pause based on whether the video is in view or not
     useEffect(() => {
         let mounted = true;
-
+        const video = videoRef.current
         const handleVideoPlay = async () => {
-            if (!videoRef.current || !isInView || !mounted) return; // Don't play if video is not in view or component is unmounted
+            if (!video || !isInView || !mounted) return; // Don't play if video is not in view or component is unmounted
 
             try {
-                if (videoRef.current.readyState >= 3) {
+                if (video.readyState >= 3) {
                     setIsBuffering(false);
-                    await videoRef.current.play(); // Play the video if it's ready
+                    await video.play(); // Play the video if it's ready
                 } else {
                     setIsBuffering(true);
                     await new Promise((resolve) => {
-                        if (videoRef.current) {
-                            videoRef.current.oncanplay = resolve; // Wait until the video can start playing
+                        if (video) {
+                            video.oncanplay = resolve; // Wait until the video can start playing
                         }
                     });
                     if (mounted) {
                         setIsBuffering(false);
-                        await videoRef.current.play();
+                        await video.play();
                     }
                 }
             } catch (error) {
@@ -75,13 +77,13 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
 
         if (isInView) {
             handleVideoPlay();
-        } else if (videoRef.current) {
-            videoRef.current.pause();
+        } else if (video) {
+            video.pause();
         }
 
         return () => {
             mounted = false;
-            const currentVideoRef = videoRef.current;
+            const currentVideoRef = video;
             if (currentVideoRef) {
                 currentVideoRef.pause();
                 currentVideoRef.removeAttribute('src');
