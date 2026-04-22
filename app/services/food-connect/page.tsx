@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Image from "next/image";
 import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
+
 import Compatibility from "@/section/compatibility";
 import ContactNew from "@/section/contact-new";
 
@@ -314,13 +315,9 @@ export default function FoodConnect() {
         viewport={{ once: true, margin: "-100px" }}
       >
         <h2 className="text-3xl font-bold mb-8 text-center">See FoodConnect in Action</h2>
-        <HeroVideoDialog
-          className="dark:hidden block"
-          animationStyle="from-center"
-          videoSrc="https://www.youtube.com/watch?v=GPc8QK7S4NI"
-          thumbnailSrc="/rms/rms-preview.png"
-          thumbnailAlt="Hero Video"
-        />  
+    <div className="flex items-center justify-center">
+        <iframe width="100%" height="800px" src="https://www.youtube.com/embed/XgkPS00xMkM?si=HDU-FzARM9jVK7vY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+      </div>
       </motion.div>
 
       {/* Call to Action Section */}

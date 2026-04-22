@@ -155,7 +155,7 @@ export default function Clients() {
             opacity: 1, 
             y: 0,
             transition: { 
-                type: "spring", 
+                type: "spring" as const, 
                 stiffness: 120,
                 damping: 20
             }
@@ -194,7 +194,7 @@ export default function Clients() {
                         transition={{ 
                             repeat: Infinity, 
                             duration: 30,
-                            ease: "linear"
+                            ease: "linear" as const
                         }}
                     >
                         {clientsData.slice(0, Math.ceil(clientsData.length / 2)).map((client) => (
@@ -217,7 +217,7 @@ export default function Clients() {
                         transition={{ 
                             repeat: Infinity, 
                             duration: 30,
-                            ease: "linear"
+                            ease: "linear" as const
                         }}
                     >
                         {clientsData.slice(Math.ceil(clientsData.length / 2)).map((client) => (

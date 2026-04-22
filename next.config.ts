@@ -35,17 +35,12 @@ const nextConfig: NextConfig = {
   // Add trailing slashes to URLs for better compatibility with static hosting
   trailingSlash: true,
   
-  // Disable TypeScript and ESLint checks during build
+  // Disable TypeScript checks during build
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     ignoreBuildErrors: true,
-  },
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
   },
 };
 

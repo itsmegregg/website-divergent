@@ -29,7 +29,7 @@ const itemVariants = {
     scale: 1,
     transition: { 
       duration: 0.5, 
-      ease: [0.25, 0.1, 0.25, 1.0] // Smoother cubic bezier
+      ease: [0.25, 0.1, 0.25, 1.0] as [number, number, number, number] // Smoother cubic bezier
     } 
   },
 };
@@ -132,7 +132,7 @@ export default function ContactNew() {
                 <Facebook />
               </a>
               <a
-                href="https://www.instagram.com/divergentechphils"
+                href="https://www.instagram.com/officialdivergentpos/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer"

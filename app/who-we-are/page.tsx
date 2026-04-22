@@ -51,12 +51,12 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 40, rotate: -2 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
     rotate: 0,
-    transition: { 
-      type: "spring",
+    transition: {
+      type: "spring" as const,
       damping: 12,
       stiffness: 100,
       duration: 0.6
@@ -79,7 +79,7 @@ const sectionVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.25, 0.1, 0.25, 1.0],
+      ease: [0.25, 0.1, 0.25, 1.0] as [number, number, number, number],
       when: "beforeChildren",
       staggerChildren: 0.2
     }
@@ -253,7 +253,7 @@ export default function WhoAreWe() {
               rotate: [0, -10, 10, -10, 10, 0], // Shake animation: rotate back and forth
               transition: {
                 duration: 0.5,
-                ease: "easeInOut",
+                ease: "easeInOut" as const,
                 repeat: 0 // Only shake once on hover
               }
             }
@@ -402,7 +402,7 @@ export default function WhoAreWe() {
                   key={idx} 
                   variants={itemVariants}
                   whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: "spring" as const, stiffness: 300 }}
                   className="h-full"
                 >
                   <Card className="h-full border overflow-hidden bg-white/90 group">

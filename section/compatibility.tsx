@@ -22,7 +22,7 @@ const itemVariants = {
         y: 0,
         transition: {
             duration: 0.6,
-            ease: "easeOut"
+            ease: "easeOut" as const
         }
     }
 };
@@ -33,7 +33,7 @@ const hoverEffect = {
     boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
     transition: {
         duration: 0.3,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
     }
 };
 

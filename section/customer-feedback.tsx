@@ -123,7 +123,7 @@ export default function CustomerFeedback() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 20, stiffness: 180 } },
+    visible: { opacity: 1, y: 0, transition: { type: "spring" as const, damping: 20, stiffness: 180 } },
   };
 
   return (
@@ -154,7 +154,7 @@ export default function CustomerFeedback() {
               <m.div
                 key={idx}
                 variants={itemVariants}
-                whileHover={{ scale: 1.03, transition: { type: "spring", stiffness: 300 } }}
+                whileHover={{ scale: 1.03, transition: { type: "spring" as const, stiffness: 300 } }}
               >
                 <Card className="relative flex flex-col h-full p-8 bg-card/80 backdrop-blur-sm border-primary/10 overflow-hidden rounded-xl shadow-lg shadow-primary/5">
                   {/* Watermark logo */}

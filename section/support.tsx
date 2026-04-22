@@ -46,7 +46,7 @@ export default function Support() {
             opacity: 1, 
             y: 0,
             transition: { 
-                type: "spring", 
+                type: "spring" as const, 
                 stiffness: 120,
                 damping: 20
             }
@@ -58,7 +58,7 @@ export default function Support() {
             y: -8,
             boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
             transition: { 
-                type: "spring",
+                type: "spring" as const,
                 stiffness: 300,
                 damping: 15
             } 
@@ -73,7 +73,7 @@ export default function Support() {
     
     const arrowVariants = {
         rest: { x: 0 },
-        hover: { x: 5, transition: { type: "spring", stiffness: 500 } }
+        hover: { x: 5, transition: { type: "spring" as const, stiffness: 500 } }
     };
 
     return (

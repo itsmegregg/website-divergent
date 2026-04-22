@@ -278,13 +278,7 @@ export default function FastPOS() {
         viewport={{ once: true, margin: "-100px" }}
       >
         <h2 className="text-3xl font-bold mb-8 text-center">See FastPOS in Action</h2>
-        <HeroVideoDialog
-          className="dark:hidden block"
-          animationStyle="from-center"
-          videoSrc="https://www.youtube.com/watch?v=GPc8QK7S4NI"
-          thumbnailSrc="/rms/rms-preview.png"
-          thumbnailAlt="Hero Video"
-        />  
+       <iframe width="100%" height="800px" src="https://www.youtube.com/embed/GPc8QK7S4NI?si=z_XwR9RnSCCRnQS-" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
       </motion.div>
 
       {/* Call to Action Section */}

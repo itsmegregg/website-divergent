@@ -159,7 +159,7 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.98 }}
                 transition={{
-                    type: "spring",
+                    type: "spring" as const,
                     stiffness: 400,
                     damping: 30
                 }}
@@ -180,11 +180,11 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                                     y: 0,
                                     scale: 1,
                                     transition: {
-                                        type: "spring",
-                                        stiffness: 500,
-                                        damping: 30,
-                                        mass: 0.5
-                                    }
+                                            type: "spring" as const,
+                                            stiffness: 500,
+                                            damping: 30,
+                                            mass: 0.5
+                                        }
                                 }}
                                 exit={{
                                     y: 20,
@@ -272,7 +272,7 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                                     scale: 1.3,
                                     rotate: 0,
                                     y: -10,
-                                    transition: { type: "spring", stiffness: 400, damping: 25 }
+                                    transition: { type: "spring" as const, stiffness: 400, damping: 25 }
                                 }}
                             >
                                 <MediaItem item={item} className="w-full h-full" onClick={() => setSelectedItem(item)} />
@@ -367,7 +367,7 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
                                         scale: 1,
                                         opacity: 1,
                                         transition: {
-                                            type: "spring",
+                                            type: "spring" as const,
                                             stiffness: 350,
                                             damping: 25,
                                             delay: index * 0.05

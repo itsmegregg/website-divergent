@@ -285,13 +285,11 @@ export default function RetailAssist() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <HeroVideoDialog
-          className="dark:hidden block"
-          animationStyle="from-center"
-          videoSrc="https://www.youtube.com/watch?v=pGQpHhBLZFk"
-          thumbnailSrc="/rms/rms-preview.png"
-          thumbnailAlt="Hero Video"
-        />  
+      
+      <div className="flex items-center justify-center">
+         <iframe width="100%" height="800px" src="https://www.youtube.com/embed/pGQpHhBLZFk?si=ukjsEm4ufRNL0qzB" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+      
+      </div>
       </motion.div>
 
       {/* Call to Action Section */}

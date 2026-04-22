@@ -50,7 +50,7 @@ export default function Services() {
         visible: { 
             opacity: 1, 
             y: 0,
-            transition: { type: "spring", stiffness: 120 }
+            transition: { type: "spring" as const, stiffness: 120 }
         }
     };
 
@@ -59,7 +59,7 @@ export default function Services() {
             y: -8,
             scale: 1.02,
             transition: { 
-                type: "spring",
+                type: "spring" as const,
                 stiffness: 300,
                 damping: 10
             } 
