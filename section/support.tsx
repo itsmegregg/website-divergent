@@ -1,11 +1,11 @@
 "use client";
 import { motion as m, useInView } from "framer-motion";
 import { useRef } from "react";
-import { PhoneCall, Headphones, LifeBuoy, Clock, CheckCircle, ArrowRight } from "lucide-react";
+import { PhoneCall, Headphones, LifeBuoy, Clock, CheckCircle } from "lucide-react";
 
 export default function Support() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.2 });
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     const supportFeatures = [
         {
@@ -35,82 +35,45 @@ export default function Support() {
             opacity: 1,
             transition: {
                 staggerChildren: 0.15,
-                when: "beforeChildren"
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 40 },
+        hidden: { opacity: 0, y: 30 },
         visible: { 
             opacity: 1, 
             y: 0,
-            transition: { 
-                type: "spring" as const, 
-                stiffness: 120,
-                damping: 20
-            }
+            transition: { duration: 0.6 }
         }
-    };
-
-    const cardHover = {
-        hover: { 
-            y: -8,
-            boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-            transition: { 
-                type: "spring" as const,
-                stiffness: 300,
-                damping: 15
-            } 
-        }
-    };
-    
-    const buttonVariants = {
-        rest: { scale: 1 },
-        hover: { scale: 1.05 },
-        tap: { scale: 0.95 }
-    };
-    
-    const arrowVariants = {
-        rest: { x: 0 },
-        hover: { x: 5, transition: { type: "spring" as const, stiffness: 500 } }
     };
 
     return (
-        <m.section 
-            ref={ref}
-            className="relative py-24 px-4 sm:px-6 lg:px-8 rounded-md overflow-hidden "
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={containerVariants}
-        >
-            <div className="max-w-7xl mx-auto">
-                {/* Background elements */}
-                <div className="absolute inset-0 opacity-15 ">
-                    <div className="absolute inset-0" />
-                </div>
-                
-                {/* Decorative blobs */}
-                <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl" />
-                <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-3xl opacity-50" />
-
+        <section className="py-24 bg-slate-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <m.div 
-                    className="text-center mb-20 space-y-6 relative z-10"
-                    variants={itemVariants}
+                    className="text-center mb-16"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                 >
-                   
-                    <h2 className="text-4xl md:text-5xl font-regular tracking-tighter">
-                         Support
-                    </h2>
-                    <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground  text-center">
-                        Professional assistance available daily from 9 AM to 9 PM through multiple channels
+                    <div className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium text-cyan-700 bg-cyan-50 mb-4">
+                        24/7 SUPPORT
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Support You Can Trust</h2>
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                        Professional assistance available daily from 9 AM to 9 PM through multiple channels.
                     </p>
                 </m.div>
 
                 <m.div 
+                    ref={ref}
                     className="grid grid-cols-1 lg:grid-cols-4 gap-8"
                     variants={containerVariants}
+                    initial="hidden"
+                    whileInView={isInView ? "visible" : "hidden"}
+                    viewport={{ once: true }}
                 >
                     {/* Support Channels */}
                     <m.div 
@@ -120,95 +83,70 @@ export default function Support() {
                         {supportFeatures.map((feature, index) => (
                             <m.div
                                 key={index}
-                                className="group relative"
                                 variants={itemVariants}
-                                whileHover="hover"
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-purple-100/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
-                                
-                                <m.div
-                                    className="relative h-full bg-white/95 backdrop-blur-lg rounded-2xl p-8 border border-neutral-100/50 shadow-sm"
-                                    variants={cardHover}
-                                    whileHover="hover"
-                                >
-                                    <div className="mb-5 p-3 bg-primary text-white rounded-xl inline-block">
+                                <div className="h-full bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                                    <div className="mb-6 p-4 bg-cyan-100 text-cyan-700 rounded-xl inline-block">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-xl font-semibold text-neutral-800 mb-2">
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">
                                         {feature.title}
                                     </h3>
-                                    <p className="text-neutral-600 leading-relaxed">
+                                    <p className="text-slate-600 leading-relaxed">
                                         {feature.description}
                                     </p>
-                                    <div className="mt-6">
-                                        <m.button 
-                                            className="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1.5"
-                                            variants={buttonVariants}
-                                            initial="rest"
-                                            whileHover="hover"
-                                            whileTap="tap"
-                                        >
-                                            Connect Now
-                                            <m.span variants={arrowVariants}>
-                                                <ArrowRight className="h-4 w-4" />
-                                            </m.span>
-                                        </m.button>
-                                    </div>
-                                </m.div>
+                                </div>
                             </m.div>
                         ))}
                     </m.div>
 
                     {/* Schedule */}
                     <m.div 
-                        className="relative bg-white/95 backdrop-blur-lg rounded-2xl p-8 border border-blue-100/50 shadow-sm overflow-hidden"
                         variants={itemVariants}
                     >
-                        <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-50 rounded-full opacity-50" />
-                        <div className="relative z-10">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-3 bg-primary text-white rounded-xl">
-                                <Clock className="w-6 h-6" />
-                            </div>
-                            <h3 className="text-xl font-semibold text-neutral-800">
-                                Operational Hours
-                            </h3>
-                        </div>
-                        
-                        <div className="space-y-4">
-                            {schedule.map((item, index) => (
-                                <m.div 
-                                    key={index} 
-                                    className="flex items-center gap-3 p-4 rounded-xl bg-primary/30 hover:bg-primary/50 transition-colors duration-200"
-                                    whileHover={{ x: 5 }}
-                                >
-                                    <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                                    <div>
-                                        <p className="font-medium text-neutral-800">{item.day}</p>
-                                        <p className="text-neutral-600 text-sm">{item.time}</p>
+                        <div className="relative bg-slate-900 text-white rounded-2xl p-8 overflow-hidden h-full">
+                            <div className="absolute -top-12 -right-12 w-48 h-48 bg-cyan-500/20 rounded-full blur-2xl" />
+                            <div className="relative z-10 h-full flex flex-col">
+                                <div className="flex items-center gap-3 mb-8">
+                                    <div className="p-4 bg-cyan-500 text-white rounded-xl">
+                                        <Clock className="w-6 h-6" />
                                     </div>
-                                </m.div>
-                            ))}
-                        </div>
+                                    <h3 className="text-xl font-bold">
+                                        Operational Hours
+                                    </h3>
+                                </div>
+                                
+                                <div className="space-y-4 flex-1">
+                                    {schedule.map((item, index) => (
+                                        <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-white/10 border border-white/20">
+                                            <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                                            <div>
+                                                <p className="font-medium text-white">{item.day}</p>
+                                                <p className="text-slate-300 text-sm">{item.time}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
 
-                        <div className="mt-6 pt-6 border-t border-blue-100">
-                            <div className="flex items-center gap-2 mb-2">
-                                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                <p className="text-sm text-neutral-600">
-                                    Average response time: <span className="font-medium text-blue-600">&lt;2 minutes</span>
-                                </p>
+                                <div className="mt-8 pt-8 border-t border-white/20">
+                                    <div className="flex items-center gap-2 mb-3">
+                                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                        <p className="text-sm text-slate-300">
+                                            Average response time: <span className="font-semibold text-cyan-300">&lt;2 minutes</span>
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                                        <p className="text-sm text-slate-300">
+                                            Service available 365 days/year
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                                <p className="text-sm text-neutral-600">
-                                    Service available 365 days/year
-                                </p>
-                            </div>
-                        </div>
                         </div>
                     </m.div>
                 </m.div>
             </div>
-        </m.section>
+        </section>
     )
 }

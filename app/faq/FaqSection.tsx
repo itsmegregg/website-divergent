@@ -54,19 +54,34 @@ export default function FaqSection() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="max-w-4xl mx-auto px-4 py-12"
+      className="max-w-4xl mx-auto px-4 py-24"
     >
-      <h1 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h1>
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium text-cyan-700 bg-cyan-50 mb-4">
+          FAQ
+        </div>
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          Find answers to common questions about our POS systems and services.
+        </p>
+      </div>
       <Accordion type="single" collapsible className="w-full">
         {faqData.map((item, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.2 }}
+            className="border border-slate-200 rounded-xl mb-4 bg-white shadow-sm hover:shadow-lg transition-all duration-300"
           >
-            <AccordionItem value={`item-${index}`} className="border-b">
-              <AccordionTrigger>{item.question}</AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
+            <AccordionItem value={`item-${index}`} className="border-none px-6">
+              <AccordionTrigger className="text-left text-slate-800 font-semibold py-6 hover:text-cyan-600 transition-colors duration-300">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-slate-600 pb-6 pt-0">
+                {item.answer}
+              </AccordionContent>
             </AccordionItem>
           </motion.div>
         ))}

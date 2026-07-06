@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 
 interface Testimonial {
   quote: string;
@@ -24,14 +24,14 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "I would like to commend Divergent Technologies Phils., Inc. for the services they have provided us - up to date software, timely response to any whatever issue may arise.  We have been partners for about two decades now and so far, so good.  We are using the Food Connect program for some of our branches as well as the FastPOS for our food court branch.",
+      "I would like to commend Divergent Technologies Phils., Inc. for the services they have provided us - up to date software, timely response to any whatever issue may arise.  We have been partners for about two decades now and so far, so good.",
     author: "Ms. Fara Solidum",
     company: "Bacolod Chicken Inasal",
     image: "https://www.bacolodchickeninasal.com/misc-images/logo.png",
   },
   {
     quote:
-      "We've had a great experience using Divergent Food Connect POS software. It's user-friendly, reliable, and has helped streamline our daily operations efficiently. The customer support team is always on point—responsive, knowledgeable, and quick to resolve any concerns. Highly recommended!",
+      "We've had a great experience using Divergent Food Connect POS software. It's user-friendly, reliable, and has helped streamline our daily operations efficiently. The customer support team is always on point—responsive, knowledgeable, and quick to resolve any concerns.",
     author: "Mr. Christopher Tarrega",
     company: "Philippine Pastries Inc. / Bizu Patisserie",
     image: "https://bizu.ph/cdn/shop/files/Logo_2.png?v=1726797402&width=200",
@@ -45,7 +45,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Our experience with Divergent as a client has been positive from day 1 - they are always quick to get back to us if we have any questions or concerns and can be relied upon whenever we would need technical assistance. We would be happy to recommend them to anyone looking for a POS provider.",
+      "Our experience with Divergent as a client has been positive from day 1 - they are always quick to get back to us if we have any questions or concerns and can be relied upon whenever we would need technical assistance.",
     author: "Big Al's Cookie Jar",
     company: "Big Al's Cookie Jar",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWkkIH3rmWntHMnLJ0AarC_aSNomETENrmLA&s"
@@ -57,56 +57,6 @@ const testimonials: Testimonial[] = [
     company: "Cafe Du Tukon",
     image: "https://www.fundacionpacita.com/img/cafe/logo.png"
   },
-  {
-    quote:
-      "We've been with Divergent for almost a decade, truthfully, we can't imagine working with anyone else. Products are as what you expect but their customers service exceeds our expectation.",
-    author: "Suki Fashion Inc.",
-    company: "Suki Fashion Inc.",
-    image: "https://cdn.shopify.com/s/files/1/0066/0471/8198/files/Suki_Logo.jpg?height=628&pad_color=fff&v=1613672899&width=1200",
-  },
-  {
-    quote:
-      "The technical support of Divergent POS is good and efficient. They are friendly and polite to talk to, if there is a problem, just call them for a solution immediately, their veterans and kind support Master Steven, Master Sonny, just one call, the problem will be solved immediately. Thank you, Divergent Technologies",
-    author: "Kalin Incorporated",
-    company: "Kalin Incorporated (Broadway Gems/Bagel Girl/Aksesoriz)",
-    image: "https://assets.bossjob.com/companies/14836/logo/ZGaIN3wrZMhJqkv3IexpL99Jj7SU5P2D84mpUcKA.jpeg",
-
-  },
-  {
-    quote:
-      "I love divergent The service and the products Mabilis kausap ung team and very approachable too. Always there to help And to explain mga items natin No regrets so far with divergent",
-    author: "Taste and Tell",
-    company: "Taste and Tell",
-    image: "https://www.tasteandtellmnl.com/cdn/shop/files/taste_and_tell.png?v=1627527766"
-  },
-  {
-    quote:  
-      "For the three (3) years that Verena's Restaurant using the POS of Divergent Technologies Philippines. The Company could attest that is good, dependable, and user-friendly. the Technical Group could easily be contacted and it immediately takes action and fix the problem if the same issue arises.",
-    author: "VERENA'S RESTAURANT",
-    company: "VERENA'S RESTAURANT",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg7H8-GnsS-FGI-qKVEttV2BbgqQUXKW3LmA&s", 
-  },
-  {
-    quote:
-      "Over the years, our partnership with Divergent Technologies Inc has been nothing short of exceptional. Their reliable technology, seamless integration, and unwavering support have played a pivotal role in optimizing our operations and enhancing customer experiences. Their commitment to innovation and responsive customer service truly set them apart in the industry. We're grateful for their continued partnership and look forward to many more years of success together.",
-    author: "Tom N Toms",
-    company: "Tom N Toms",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYlIzDlmWg3ce_0NOT8lCUioUkOhiE6V0Lwg&s"
-  },
-  {
-    quote:
-      "I've been using Divergent for 2 years now and am very happy with their service - their system is solid and smooth, and the team is very responsive and helpful in providing solutions for my business. They offer the best of both worlds - functionality and familiarity, easy to use and already accredited with malls; while also keeping up-to-date with current innovations and digitization like real-time data tracking. They take time to understand my operational needs and are fast to program a custom feature where needed. Definitely recommend, whether for new companies and startups as well as established or scaling businesses!",
-    author: "Ms. Ysabella Lavalan",
-    company: "Sisig Hooray Franchisee",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmm2SnKwCjY3c6ILGmalsQlCkE1_8fGZVdKQ&s"
-  },
-  {
-    quote:
-      "We are pleased to share our positive feedback regarding our experience with the POS software and the services rendered to Fruitasgroup / Balai ni Fruitas and Ling Nam. The POS system has been reliable, user-friendly, and well-suited to our daily operations. It has significantly helped improve transaction efficiency, reporting accuracy, and overall workflow. The system's stability and ease of use have contributed to smoother store operations. In addition, Divergent team has consistently provided excellent support and assistance. Concerns and requests were addressed promptly and professionally, demonstrating strong technical knowledge and a genuine commitment to customer satisfaction. The implementation and after-sales support were both handled efficiently. Overall, we are very satisfied with the performance of Divergent’s POS software and the quality of service provided. We expect this level of service to be consistently maintained as our business relationship continues.",
-    author: "Mr. Lito Dacaymat",
-    company: "Fruitasgroup, Inc., Balai Ni Fruitas, Inc., Lingnam Food Inc.",
-    image: "https://fruitasholdings.com/wp/wp-content/uploads/2024/08/Fruitas-1-300x200.png",
-  },
 ];
 
 export default function CustomerFeedback() {
@@ -117,63 +67,79 @@ export default function CustomerFeedback() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.15 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring" as const, damping: 20, stiffness: 180 } },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <m.section
-      ref={ref}
-      className="relative py-24 px-4 sm:px-6 lg:px-8"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
-      aria-labelledby="customer-feedback-heading"
-    >
-      <div className="max-w-7xl mx-auto">
-        <m.div className="text-center mb-12 space-y-4" variants={itemVariants}>
-          <h2 id="customer-feedback-heading" className="text-4xl md:text-5xl font-regular tracking-tight">
-            Customer Feedback
-          </h2>
-          <p className="text-muted-foreground text-lg md:text-xl">
-            What our clients say about working with Divergent
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <m.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium text-cyan-700 bg-cyan-50 mb-4">
+            TESTIMONIALS
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Customer Feedback</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            What our clients say about working with Divergent.
           </p>
         </m.div>
 
-        {/* 3-column grid with logo background cards */}
-        <m.div className="grid grid-cols-1 lg:grid-cols-3 gap-6" variants={containerVariants}>
+        <m.div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView={isInView ? "visible" : "hidden"}
+          viewport={{ once: true }}
+        >
           {testimonials.map((t, idx) => {
-            const initials = getInitials(t.author || t.company);
-            const bg = t.image ?? buildAvatarDataUrl(initials);
             return (
               <m.div
                 key={idx}
                 variants={itemVariants}
-                whileHover={{ scale: 1.03, transition: { type: "spring" as const, stiffness: 300 } }}
               >
-                <Card className="relative flex flex-col h-full p-8 bg-card/80 backdrop-blur-sm border-primary/10 overflow-hidden rounded-xl shadow-lg shadow-primary/5">
-                  {/* Watermark logo */}
-                  <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-center bg-contain bg-no-repeat opacity-5"
-                    style={{ backgroundImage: `url(${bg})` }}
-                    aria-hidden="true"
-                  />
-
-                  {/* Decorative Quote Icon */}
-                  <Quote className="absolute top-4 left-4 size-10 text-primary/10" />
-
-                  {/* Foreground Content */}
-                  <div className="relative z-10 flex flex-col flex-grow">
-                    <p className="flex-grow mt-6 text-lg md:text-xl font-medium leading-relaxed text-card-foreground/90">
-                      “{t.quote}”
-                    </p>
-                    <div className="mt-6 flex justify-center">
-                      <Header author={t.author} company={t.company} image={t.image} />
+                <Card className="flex flex-col h-full p-8 bg-white border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  {/* Stars */}
+                  <div className="flex items-center gap-1 mb-6 text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-current" />
+                    ))}
+                  </div>
+                  
+                  {/* Quote Icon */}
+                  <Quote className="w-8 h-8 text-cyan-500 mb-4" />
+                  
+                  {/* Quote Content */}
+                  <p className="flex-grow text-lg leading-relaxed text-slate-700 mb-8">
+                    "{t.quote}"
+                  </p>
+                  
+                  {/* Author Info with Image */}
+                  <div className="mt-auto border-t border-slate-100 pt-6 flex items-center gap-4">
+                    {t.image && (
+                      <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-100 flex-shrink-0">
+                        <img 
+                          src={t.image} 
+                          alt={`${t.company} logo`}
+                          className="w-full h-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-slate-900 truncate">{t.author}</p>
+                      <p className="text-slate-600 text-sm mt-1 truncate">{t.company}</p>
                     </div>
                   </div>
                 </Card>
@@ -182,43 +148,6 @@ export default function CustomerFeedback() {
           })}
         </m.div>
       </div>
-    </m.section>
+    </section>
   );
-}
-
-// Subcomponents & helpers
-function Header({ author, company, image }: { author: string; company: string; image?: string }) {
-  const initials = getInitials(author || company);
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="relative size-16 shrink-0">
-        <img
-          src={image ?? buildAvatarDataUrl(initials)}
-          alt={`${author} avatar`}
-          className="size-16 rounded-full object-cover ring-2 ring-primary/10"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div className="flex flex-col text-center">
-        <p className="font-semibold text-lg leading-none">{author}</p>
-        <p className="text-base text-muted-foreground mt-1">{company}</p>
-      </div>
-    </div>
-  );
-}
-
-function getInitials(name: string): string {
-  const parts = name.split(/\s+/).filter(Boolean);
-  if (!parts.length) return "?";
-  const first = parts[0]?.[0] ?? "";
-  const last = parts.length > 1 ? parts[parts.length - 1]?.[0] ?? "" : "";
-  return (first + last).toUpperCase();
-}
-
-function buildAvatarDataUrl(initials: string): string {
-  const bg = "#EEF2FF"; // soft primary tint
-  const fg = "#4338CA"; // primary
-  const svg = `\n<svg xmlns='http://www.w3.org/2000/svg' width='96' height='96'>\n  <rect width='100%' height='100%' rx='48' fill='${bg}'/>\n  <text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Inter, ui-sans-serif, system-ui' font-size='36' font-weight='600' fill='${fg}'>${initials}</text>\n</svg>`;
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
